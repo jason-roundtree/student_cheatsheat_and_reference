@@ -11,8 +11,8 @@ const data = [
             },
             {
                 name: 'Paste',
-                mac: 'Command + P',
-                windows: 'Ctrl + P'
+                mac: 'Command + V',
+                windows: 'Ctrl + V'
             },
             {
                 name: 'Cut',
@@ -26,25 +26,59 @@ const data = [
             },
             {
                 name: 'Redo',
-                mac: 'Shift + Command + Z',
-                windows: 'Shift + Ctrl + Z'
+                mac: 'Command + Shift + Z',
+                windows: 'Ctrl + Shift + Z'
+            },
+            {
+                name: 'Select All',
+                mac: 'Command + A',
+                windows: 'Ctrl + A'
+            },
+            {
+                name: 'Save File',
+                mac: 'Command + S',
+                windows: 'Ctrl + S'
+            },
+            {
+                name: 'New File',
+                mac: 'Command + N',
+                windows: 'Ctrl + N'
+            },
+            {
+                name: 'Open File',
+                mac: 'Command + O',
+                windows: 'Ctrl + O'
             },
         ]
     },
     ////////////
     {
-        id: 'vsCode',
-        name: 'VS Code Shortcuts & Tools',
+        id: 'vsCode_shortcuts',
+        name: 'VS Code Shortcuts',
         type: 'shortcut_table',
         data: [
+            // TODO: Emmet cheatsheet link: https://docs.emmet.io/cheat-sheet/
             {
-                name: 'Comment/Uncomment Code',
+                name: 'Toggle Code Comment',
                 mac: 'Command + ?',
                 windows: 'Ctrl + ?'
             },
             {
+                name: 'Cut Line',
+                mac: 'Command + X',
+                windows: 'Ctrl + X',
+                notes: [
+                    'This can effectively be used to quickly delete lines.'
+                ]
+            },
+            {
+                name: 'Delete Line',
+                mac: 'Command + Shift + K',
+                windows: 'Ctrl + Shift + K',
+            },
+            {
                 name: 'Add Selection to Next Match',
-                mac: 'Command/⌘ + D',
+                mac: 'Command + D',
                 windows: 'Ctrl + D'
             },
             {
@@ -55,12 +89,12 @@ const data = [
             {
                 name: 'Move Cursor to End of Line',
                 mac: 'Command + →',
-                windows: 'Ctrl →'
+                windows: 'Windows + →'
             },
             {
                 name: 'Move Cursor to Start of Line',
                 mac: 'Command + ←',
-                windows: 'Ctrl + ←'
+                windows: 'Windows + ←'
             },
             {
                 name: 'Move Cursor to Line',
@@ -68,15 +102,38 @@ const data = [
                 windows: 'Ctrl + G'
             },
             {
+                name: 'Insert Line Below',
+                mac: 'Command + Enter',
+                windows: 'Ctrl + Enter'
+            },
+            {
+                name: 'Insert Line Above',
+                mac: 'Command + Shift + Enter',
+                windows: ' Ctrl + Shift + Enter'
+            },
+            {
                 name: 'Toggle Word Wrap in Current File',
                 mac: 'Option/Alt + G',
                 windows: 'Alt + G'
             },
             {
+                name: 'Jump to Matching Bracket',
+                mac: 'Command + Shift + \\',
+                windows: 'Ctrl + Shift + \\'
+            },
+            {
                 name: 'Indent/Outdent Line or Selection',
                 mac: 'Command + ] / [',
                 // TODO: Command may be Ctrl on windows
-                windows: 'Command + ] / ['
+                windows: 'Ctrl + ] / [',
+                notes: [
+                    'The cursor can be anywhere on the line, for instance, in between words, and it will still only move the whole line.'
+                ]
+            },
+            {
+                name: 'Expand/Shrink Current Selection',
+                mac: 'Control + Shift + Command + ←/→',
+                windows: '?????'
             },
             {
                 name: 'Toggle Terminal',
@@ -84,6 +141,22 @@ const data = [
                 // TODO: does this work for git bash?
                 windows: 'Crtl + ~'
             },
+            {
+                name: 'Open VSCode Command Palette',
+                mac: 'Shift + Command + P',
+                // TODO: does this work for git bash?
+                windows: 'Shift + Crtl + P'
+            },
+        ]
+    },
+    ////////////
+    {
+        id: 'vsCode_tools',
+        name: 'VS Code Tools & Extentions',
+        data: [
+            {
+
+            }
         ]
     },
     ////////////

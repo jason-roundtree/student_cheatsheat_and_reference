@@ -8,7 +8,8 @@ export default function Header() {
             <nav>
                 <ul>
                     <li><a href="#general_shortcuts">General Shortcuts</a></li>
-                    <li><a href="#vsCode">VS Code Shortcuts & Tools</a></li>
+                    <li><a href="#vsCode_shortcuts">VS Code Shortcuts</a></li>
+                    <li><a href="#vsCode_tools">VS Code Tools & Extension</a></li>
                     <li><a href="#browser_shortcuts">Browser Shortcuts</a></li>
                     <li><a href="#types">Types</a></li>
                     <li><a href="#operators">Operators</a></li>
