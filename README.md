@@ -1,3 +1,6 @@
+Gist with project todo's: https://gist.github.com/RoundEm/f7fd801caf570a7a1ebede0154dbfb97
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
