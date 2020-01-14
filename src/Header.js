@@ -7,7 +7,7 @@ export default function Header() {
             <h2>Table of Contents</h2>
             <nav>
                 <ul>
-                    <li><a href="#general_shortcuts">General Shortcuts</a></li>
+                    <li><a href="#basic_shortcuts">Basic Shortcuts</a></li>
                     <li><a href="#vsCode_shortcuts">VS Code Shortcuts</a></li>
                     <li><a href="#vsCode_tools">VS Code Tools & Extension</a></li>
                     <li><a href="#browser_shortcuts">Browser Shortcuts</a></li>

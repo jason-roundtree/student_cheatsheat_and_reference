@@ -1,7 +1,7 @@
 const data = [
     {
-        id: 'general_shortcuts',
-        name: 'General Shortcuts',
+        id: 'basic_shortcuts',
+        name: 'Basic Shortcuts',
         type: 'shortcut_table',
         data: [
             {
@@ -35,9 +35,14 @@ const data = [
                 windows: 'Ctrl + A'
             },
             {
-                name: 'Save File',
+                name: 'Save',
                 mac: 'Command + S',
                 windows: 'Ctrl + S'
+            },
+            {
+                name: 'Save As',
+                mac: 'Shift + Command + S',
+                windows: 'Shift + Ctrl + S'
             },
             {
                 name: 'New File',
@@ -49,6 +54,37 @@ const data = [
                 mac: 'Command + O',
                 windows: 'Ctrl + O'
             },
+            {
+                name: 'Close File',
+                mac: 'Command + W',
+                windows: 'Ctrl + W'
+            },
+            {
+                name: 'Find',
+                mac: 'Command + F',
+                windows: 'Ctrl + F'
+            },
+            {
+                name: 'Zoom In/Out',
+                mac: 'Command + +/-',
+                windows: 'Ctrl + +/-',
+                notes: [
+                    'Usually you can reset the zoom level to 100% with Command/Ctrl + 0.'
+                ]
+            },
+            {
+                name: 'Switch Between Open Applications',
+                mac: 'Command + Tab',
+                windows: 'Alt + Tab',
+                notes: [
+                    'The default behavoir for this shortcut is for open applications to be traversed from left to right in order of most recently used applications but you can also press the Shift key to rotate from right to left. Also, by just pressing Alt + Tab you can toggle between the current and last used application.'
+                ]
+            },
+            // {
+            //     name: '',
+            //     mac: '',
+            //     windows: ''
+            // },
         ]
     },
     ////////////
@@ -56,19 +92,45 @@ const data = [
         id: 'vsCode_shortcuts',
         name: 'VS Code Shortcuts',
         type: 'shortcut_table',
+        external_link: 'https://code.visualstudio.com/docs',
         data: [
-            // TODO: Emmet cheatsheet link: https://docs.emmet.io/cheat-sheet/
+            {
+                name: 'Open Keyboard Shortcuts',
+                mac: 'Command + K Command + S',
+                windows: 'Ctrl + K Ctrl + S'
+            },
+            {
+                name: 'Open VSCode Command Palette',
+                mac: 'Shift + Command + P',
+                // TODO: does this work for git bash?
+                windows: 'Shift + Crtl + P'
+            },
+            {
+                name: 'Open User Settings',
+                mac: 'Command + ,',
+                windows: 'Crtl + ,'
+            },
+            {
+                name: 'Go to File',
+                mac: 'Command + P',
+                windows: 'Crtl + P'
+            },
+            {
+                name: 'Go to Line',
+                mac: 'Ctrl + G',
+                windows: 'Ctrl + G'
+            },
             {
                 name: 'Toggle Code Comment',
                 mac: 'Command + ?',
                 windows: 'Ctrl + ?'
             },
             {
-                name: 'Cut Line',
+                name: 'Cut Line or Selection',
                 mac: 'Command + X',
                 windows: 'Ctrl + X',
                 notes: [
-                    'This can effectively be used to quickly delete lines.'
+                    'This can effectively also be used to quickly delete lines and selections with your non-mouse hand, although the content will still be in your clipboard.'
                 ]
             },
             {
@@ -82,8 +144,33 @@ const data = [
                 windows: 'Ctrl + D'
             },
             {
+                name: 'Select All Occurrences of Current Selection in Current File',
+                mac: 'Shift + Command + L',
+                windows: 'Shift + Ctrl + L'
+            },
+            {
+                name: 'Expand/Shrink Current Selection by Word',
+                mac: 'Shift + Alt + ←/→',
+                windows: 'Shift + Alt + ←/→'
+            },
+            {
+                name: 'Expand/Shrink Current Selection by Character',
+                mac: 'Shift + Command + Alt + ←/→',
+                windows: 'Shift + Ctrl + Alt + ←/→'
+            },
+            {
+                name: 'Expand/Shrink Current Selection',
+                mac: 'Ctrl + Shift + Command + ←/→',
+                windows: 'Ctrl + Shift + Command + ←/→'
+            },
+            {
+                name: 'Select Entire Line / Expand Current Line Selection Down',
+                mac: 'Command + L',
+                windows: 'Ctrl + L'
+            },
+            {
                 name: 'Move Line Up/Down',
-                mac: 'Option/Alt + ↑/↓',
+                mac: 'Option + ↑/↓',
                 windows: 'Alt + ↑/↓'
             },
             {
@@ -97,9 +184,22 @@ const data = [
                 windows: 'Windows + ←'
             },
             {
-                name: 'Move Cursor to Line',
-                mac: 'Ctrl + G',
-                windows: 'Ctrl + G'
+                name: 'Move Cursor to End of Next Word',
+                mac: 'Option + →',
+                windows: 'Alt + →'
+            },
+            {
+                name: 'Move Cursor to Start of Prior Word',
+                mac: 'Option + ←',
+                windows: 'Alt + ←'
+            },
+            {
+                name: 'Multi-Cursor Editing',
+                mac: 'Option + Click',
+                windows: 'Alt + Click',
+                notes: [
+                    'If you also hold Select you can edit multiple selections at once or double-click multiple words to edit them all at once.'
+                ]
             },
             {
                 name: 'Insert Line Below',
@@ -113,7 +213,7 @@ const data = [
             },
             {
                 name: 'Toggle Word Wrap in Current File',
-                mac: 'Option/Alt + G',
+                mac: 'Option + G',
                 windows: 'Alt + G'
             },
             {
@@ -127,12 +227,35 @@ const data = [
                 // TODO: Command may be Ctrl on windows
                 windows: 'Ctrl + ] / [',
                 notes: [
-                    'The cursor can be anywhere on the line, for instance, in between words, and it will still only move the whole line.'
+                    'You can also use Tab or Shift + Tab for indenting but the nice thing about using the shorcut with brackets is that the cursor can be anywhere on the line and it will move the whole line without separating text. For instance, even if the cursor is in the middle of a line of text it will still only move the whole line.'
                 ]
             },
             {
-                name: 'Expand/Shrink Current Selection',
-                mac: 'Control + Shift + Command + ←/→',
+                name: 'Delete by Word',
+                mac: 'Option + Delete',
+                windows: '?????'
+            },
+            {
+                name: 'Forward Delete (characters in front of the cursor)',
+                mac: 'Ctrl + D',
+                windows: '?????',
+                notes: [
+                    'The Delete key on most Mac keyboards will delete from right to left in the same way as the Backspace key does on other keyboards. Many non-Mac keyboards have a Delete or DEL key that permorm "Forward Delete" and deletes text in the opposite way as Mac Delete, so this shortcut allows users without the non-Mac Delete key to achieve Forward Delete.'
+                ]
+            },
+            {
+                name: 'Forward Delete by Word',
+                mac: 'Fn + Option + Delete',
+                windows: '?????'
+            },
+            {
+                name: 'Delete Word Behind Cursor',
+                mac: 'Option + Delete',
+                windows: '?????'
+            },
+            {
+                name: 'Delete Line Behind Cursor',
+                mac: 'Command + Delete',
                 windows: '?????'
             },
             {
@@ -142,10 +265,34 @@ const data = [
                 windows: 'Crtl + ~'
             },
             {
-                name: 'Open VSCode Command Palette',
-                mac: 'Shift + Command + P',
-                // TODO: does this work for git bash?
-                windows: 'Shift + Crtl + P'
+                name: 'Traverse Through Open Files/Tabs',
+                mac: 'Option + Command + ←/→',
+                windows: '??????'
+            },
+            {
+                name: 'Find & Replace in Current File',
+                mac: 'Option + Command + F',
+                // TODO: is this actually Ctrl + H for windows?
+                windows: 'Alt + Ctrl + F'
+            },
+            {
+                name: 'Find in Project',
+                mac: 'Shift + Command + F',
+                windows: 'Shift + Ctrl + F'
+            },
+            {
+                name: 'Format Currently Selected Code',
+                mac: 'Command + K Command + F',
+                windows: 'Ctrl + K Ctrl + F',
+                notes: [
+                    // TODO: Look into this:
+                    'Might not respect previous tab spacing.'
+                ]
+            },
+            {
+                name: 'Format Whole File',
+                mac: 'Shift + Option + F',
+                windows: 'Shift + Alt + F'
             },
         ]
     },
@@ -155,7 +302,7 @@ const data = [
         name: 'VS Code Tools & Extentions',
         data: [
             {
-
+                // TODO: Emmet cheatsheet link: https://docs.emmet.io/cheat-sheet/  
             }
         ]
     },
