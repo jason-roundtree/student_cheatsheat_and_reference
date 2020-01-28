@@ -1,5 +1,6 @@
 import React from 'react'
 import ShortcutTable from './ShortcutTable'
+import DescriptiveItem from './DescriptiveItem'
 
 export default function TopicSection(props) {
     return (
@@ -13,9 +14,14 @@ export default function TopicSection(props) {
                 )
 
                 : (
-                    <span>Content Coming Soon</span>
+                    <DescriptiveItem 
+                        section={props.section}
+                    />
                 )
             }
             </section>             
     )
 }
+
+
+  

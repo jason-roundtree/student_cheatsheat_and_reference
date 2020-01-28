@@ -40,6 +40,7 @@ table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
+  margin: 10px 0;
 }
 
 th {
@@ -62,4 +63,36 @@ kbd {
   white-space: nowrap;
 }
 
+/* DescriptiveItem.js */
+
+.description_container {
+  border: 1px solid rgb(98, 157, 247);
+  /* border-radius: 5px; */
+  margin: 10px 0;
+}
+
+.description_container h4 {
+  font-weight: 700;
+  background-color: rgb(98, 157, 247);
+  color: white;
+  padding: 5px;
+}
+
+.description_container p, 
+.description_container ul {
+  padding: 5px;
+}
+.description_container p {
+  background-color: white;
+  font-size: .85em;
+}
+
+.description_container ul {
+  background-color: rgb(235, 232, 232);
+  font-size: .8em;
+}
+
+.description_container li::before {
+  content: '- '
+}
 

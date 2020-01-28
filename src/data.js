@@ -89,10 +89,91 @@ const data = [
     },
     ////////////
     {
+        // https://support.google.com/chrome/answer/157179?hl=en
+        id: 'browser_shortcuts',
+        name: 'Browser Shortcuts',
+        type: 'shortcut_table',
+        data: [
+            {
+                name: 'Developer tools',
+                mac: 'Option + Command + I',
+                windows: 'Option + Ctrl + I'
+            },
+            {
+                name: 'JavaScript console',
+                mac: 'Option + Command + J',
+                windows: 'Option + Ctrl + J'
+            },
+            {
+                name: 'Inspect elements',
+                mac: 'Option + Command + C',
+                windows: 'Option + Ctrl + C'
+            },
+            {
+                name: 'Refresh page',
+                mac: 'Command + R',
+                windows: 'Ctrl + R'
+            },
+            {
+                name: 'Force refresh',
+                mac: 'Shift + Command + R',
+                // TODO: do these both work?:
+                windows: 'Shift + Command + R',
+                windows: 'Ctrl + F5 or Ctrl + Click Browser Reload',
+                notes: [
+                    'Force Refresh will clear the browser’s cache for a specific page and force it to load the most recent version of a page.'
+                ]
+            },
+            {
+                name: 'Open new tab',
+                mac: 'Command + T',
+                windows: 'Ctrl + T'
+            },
+            {
+                name: 'Reopen closed tabs in order closed',
+                mac: 'Shift + Command + T',
+                windows: 'Shift + Ctrl + T'
+            },
+            {
+                name: 'Traverse tabs',
+                mac: 'Option + Command + ←/→',
+                windows: 'Option + Ctrl + ←/→'
+            },
+            {
+                name: 'Open new window in incognito mode',
+                mac: 'Command + Shift + N',
+                windows: 'Ctrl + Shift + N'
+            },
+            {
+                name: 'Jump to address bar',
+                mac: 'Command + L',
+                windows: 'Ctrl + L'
+            },
+            // {
+            //     name: 'Remove predictions from your address bar',
+            //     mac: '',
+            //     windows: ''
+            // },
+            {
+                name: 'Save your current webpage as a bookmark',
+                mac: 'Command + D',
+                windows: 'Ctrl + D'
+            },
+            {
+                name: 'Open bookmarks manager',
+                mac: 'Command + Option + B',
+                windows: 'Ctrl + Shift + O'
+            },
+        ]
+    },
+    ////////////
+    {
         id: 'vsCode_shortcuts',
         name: 'VS Code Shortcuts',
         type: 'shortcut_table',
-        external_link: 'https://code.visualstudio.com/docs',
+        external_links: [
+            'https://code.visualstudio.com/docs',
+        ],
         data: [
             {
                 name: 'Open Keyboard Shortcuts',
@@ -300,77 +381,680 @@ const data = [
     {
         id: 'vsCode_tools',
         name: 'VS Code Tools & Extentions',
+        type: 'descriptive_section',
         data: [
             {
-                // TODO: Emmet cheatsheet link: https://docs.emmet.io/cheat-sheet/  
-            }
+                name: 'Emmet',
+                description: 'Emmet provides you with many  helpful shortcuts and patterns for generating groups of HTML and CSS code dymanically on the fly. For example, if you want to create a nav bar with a list of 5 links you can type "nav>ul>li*5>a" followed by the Tab key. Modern versions of VSCode include Emmet out-of-the-box.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://docs.emmet.io/'
+                    },
+                    {
+                        linkDescription: 'Cheatsheet',
+                        href: 'https://docs.emmet.io/cheat-sheet/'
+                    }
+                ]
+            },
+            {
+                name: 'Snippets',
+                description: 'Snippets are predefined and customizable templates that allow you to generate repeating code patterns by only entering a short and unique series of text. There are predefined snippets that come with VSCode but you can also create and customize your own snippets or use popular snippet libraries that have been created for the VSCode marketplace.',
+                external_links: [
+                    { 
+                        linkDescription: 'Create Your Own Snippets',
+                        href: 'https://code.visualstudio.com/docs/editor/userdefinedsnippets#_creating-your-own-snippets'
+                    },
+                    {
+                        linkDescription: 'Marketplace Extension: JavaScript (ES6) code snippets',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets'
+                    },
+                    {
+                        linkDescription: 'Marketplace Extension: ES7 React/Redux/GraphQL/React-Native snippets',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets'
+                    },
+
+                ]
+            },
+            {
+                name: 'ESLint',
+                description: 'This extension is a popular open source JavaScript linting utility. Code linting is a type of static analysis that is frequently used to find problematic code or code that doesn\'t adhere to certain style guidelines.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://eslint.org/'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint'
+                    }
+                ]
+            },
+            {
+                name: 'Prettier',
+                description: 'This extension is an opinionated code formatter that saves you time and energy by automatically removing original user code styling and ensuring that outputted code conforms to a consistent style.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://prettier.io/'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint'
+                    }
+                ]
+            },
+            {
+                name: 'Quokka.js',
+                description: 'This extension is a rapid prototyping playground in your editor that allows you see the result of your programs being run right next to your code, as you type.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://quokkajs.com/docs/'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=WallabyJs.quokka-vscode'
+                    }
+                ]
+            },
+            {
+                name: 'Live Server',
+                description: 'This extension can launch a local development server with a live reload feature so that when you save your project any changes you\'ve made will be reflected in the browser without you having to manually refresh it.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/ritwickdey/vscode-live-server'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer'
+                    }
+                ]
+            },
+            {
+                name: 'Colorizer',
+                description: 'This extension is great for situations when you\'re using abstract values for CSS colors instead the actual name of the color. For instance, instead of using color names it\'s common to use values in units such as RGB, HEX, HSL, etc, but unless you\'re a CSS color guru it\'s not going to be immediately clear what colors these values correspond to. Colorizer helps you instantly visualize what colors these values corresponding by highlighting the value background in your code.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/kamikillerto/vscode-colorize'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=kamikillerto.vscode-colorize'
+                    }
+                ]
+            },
+            {
+                name: 'Bracket Pair Colorizer',
+                description: 'This extension allows matching brackets to be identified with colors so it\'s easier to recognize where code blocks start and end, which allows you to more easily manage your code and identify mismatched brackets and out-of-place code.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/CoenraadS/BracketPair'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: ' https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks'
+                    }
+                ]
+            },
+            {
+                name: 'CSS Peak',
+                description: 'This extension allows you to view and make edits to your CSS without having to actually open your CSS files and find the corresponding rule.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/pranaygp/vscode-css-peek'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek'
+                    }
+                ]
+            },
+            {
+                name: 'VS Code Intellisense',
+                description: 'VS Code IntelliSense provides intelligent code completions based on language semantics and an analysis of your source code. If a language service knows possible completions, the IntelliSense suggestions will pop up as you type. If you continue typing characters, the list of members (variables, methods, etc.) is filtered to only include members containing your typed characters. VS Code IntelliSense is provided for JavaScript, TypeScript, JSON, HTML, CSS, SCSS, and Less out of the box. VS Code supports word based completions for any programming language but can also be configured to have richer IntelliSense by installing a language extension. When using Intellisense, pressing Tab or Enter will insert the selected member. You can trigger IntelliSense in any editor window by typing Command + Space.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://code.visualstudio.com/docs/editor/intellisense'
+                    }
+                ]
+            },
         ]
     },
     ////////////
     {
-        id: 'browser_shortcuts',
-        name: 'Browser Shortcuts',
-        type: 'shortcut_table',
+        // TODO: add examples and options fields?
+        id: 'command_line',
+        name: 'Command Line',
+        type: 'descriptive_section',
         data: [
-
+            {
+                name: 'cd',
+                description: 'Change the working directory (i.e. the current folder you\'re in).',
+                external_links: [
+                    {
+                        linkDescription: '',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'pwd',
+                description: 'Displays the name and path of the current working directory that you are in.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'ls',
+                description: 'Displays a list of all files in the current working directory and allows you to view information about each of the files.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'mkdir',
+                description: 'Creates a new directory.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'touch',
+                description: 'Creates a new file.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'mv',
+                description: 'Move and/or rename files.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'cat',
+                description: 'Add text to files. View contents of files. Create new files.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'man',
+                description: 'Displays a user manual for a command.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'help',
+                description: 'Displays a list of all available commands.',
+                external_links: [
+                    {
+                        linkDescription: '',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'rm',
+                description: 'Deletes files and directorties.',
+                external_links: [
+                    {
+                        linkDescription: '',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'ps',
+                description: 'Displays a list of the currently running processes (e.g. instance of a computer program that is currently running) and information associated with those processes like Process ID (PID), which can be helpful when you\'d like to force-close unresponsive programs, particularly command line programs with no GUI.',
+                external_links: [
+                    {
+                        linkDescription: '',
+                        href: ''
+                    },
+                ]
+            },
+            {
+                name: 'clear',
+                description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up.',
+                external_links: [
+                    {
+                        linkDescription: '',
+                        href: ''
+                    },
+                ]
+            },
         ]
     },
+    ////////////
     {
-        id: 'types',
-        name: 'Types',
-        type: 'shortcut_table',
-        data: [
-
-        ]
-    },
-    {
-        id: 'operators',
-        name: 'Operators',
+        id: 'git_commands',
+        name: 'Git Commands',
         type: '',
+        external_links: [
+            {
+                linkDescription: 'Git Documentation',
+                href: 'https://code.visualstudio.com/docs'
+            },
+            {
+                linkDescription: 'Git Cheat Sheet',
+                href: 'https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf0'
+            },
+            {
+                linkDescription: 'Git Visual Cheat Sheet',
+                href: 'https://ndpsoftware.com/git-cheatsheet.html'
+            },
+        ],
+        // TODO: add options fields?
         data: [
-
+            {
+                name: 'git init',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git clone',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git fork',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git status',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git diff',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git add',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git commit',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git push',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git pull',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git fetch',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git branch',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git checkout',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git merge',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git reset',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git revert',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git stash',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git remote',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            {
+                name: 'git log',
+                description: '',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: ''
+                    },
+                    { 
+                        linkDescription: ' '
+                    }
+                ]
+            },
+            
+            
         ]
     },
-    {
-        id: 'variables',
-        name: 'Variables',
-        type: '',
-        data: [
+    ////////////
+    // {
+    //     id: 'data_types',
+    //     name: 'Data Types',
+    //     type: '',
+    //     data: [
+    //         {
+    //             name: 'Primitive Values',
+    //             description: 'In JavaScript all types other than objects are referred to as "primitive values" and are incapable of being changed or "immutable".',
+    //             primitiveTypes: [
+    //                 {
+    //                     name: 'boolean',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'bigInt',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'number',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'null',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'string',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'symbol',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'undefined',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //             ]
+    //         },
+    //         {
+    //             name: 'Objects',
+    //             description: '',
+    //             objectTypes: [
+    //                 {
+    //                     name: 'Objects',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'Functions',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //                 {
+    //                     name: 'Arrays',
+    //                     description: '',
+    //                     examples: []
+    //                 },
+    //             ]
+    //         }
+    //     ]
+    // },
+    // ////////////
+    // {
+    //     id: 'operators',
+    //     name: 'Operators',
+    //     type: '',
+    //     data: [
 
-        ]
-    },
-    {
-        id: 'functions',
-        name: 'Functions ',
-        type: '',
-        data: [
+    //     ]
+    // },
+    ////////////
+    // {
+    //     id: 'variables',
+    //     name: 'Variables',
+    //     type: '',
+    //     data: [
+    //         {
+    //             name: 'let',
+    //             description: '',
+    //             examples: [
+                    
+    //             ]
+    //         },
+    //         {
+    //             name: 'const',
+    //             description: '',
+    //             examples: [
 
-        ]
-    },
-    {
-        id: 'loops',
-        name: 'Loops',
-        type: '',
-        data: [
+    //             ]
+    //         },
+    //         {
+    //             name: 'var',
+    //             description: '',
+    //             examples: [
 
-        ]
-    },
-    {
-        id: 'control_statements',
-        name: 'Control Statements ',
-        type: '',
-        data: [
+    //             ]
+    //         }
+    //     ]
+    // },
+    ////////////
+    // {
+    //     id: 'functions',
+    //     name: 'Functions ',
+    //     type: '',
+    //     data: [
+    //     ]
+    // },
+    ////////////
+    // {
+    //     id: 'loops',
+    //     name: 'Loops',
+    //     type: '',
+    //     data: [
 
-        ]
-    },
-    {
-        id: 'scopes',
-        name: 'Scope & Closures',
-        type: '',
-        data: [
+    //     ]
+    // },
+    // {
+    //     id: 'control_statements',
+    //     name: 'Control Statements ',
+    //     type: '',
+    //     data: [
 
-        ]
-    },
+    //     ]
+    // },
+    // {
+    //     id: 'scopes',
+    //     name: 'Scope & Closures',
+    //     type: '',
+    //     data: [
+
+    //     ]
+    // },
 ]
 
 export default data
