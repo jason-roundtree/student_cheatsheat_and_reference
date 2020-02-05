@@ -1,4 +1,5 @@
 import React from 'react'
+import data from './data'
 
 export default function Header() {
     return (
@@ -8,7 +9,17 @@ export default function Header() {
             <nav>
                 {/* TODO: change this to loop over data so you don't have to keep manually updating */}
                 <ul>
-                    <li><a href="#basic_shortcuts">Basic Shortcuts</a></li>
+                    {data.map(section => {
+                        return (
+                            <li>
+                                <a href={`#${section.id}`}>
+                                    {section.name}
+                                </a>
+                            </li>
+                        )
+                    })}
+                    
+                    {/* <li><a href="#basic_shortcuts">Basic Shortcuts</a></li>
                     <li><a href="#browser_shortcuts">Browser Shortcuts</a></li>
                     <li><a href="#vsCode_shortcuts">VS Code Shortcuts</a></li>
                     <li><a href="#vsCode_tools">VS Code Tools & Extension</a></li>
@@ -20,8 +31,7 @@ export default function Header() {
                     <li><a href="#functions">Functions</a></li>
                     <li><a href="#loops">Loops</a></li>
                     <li><a href="#control_statements">Control Statements</a></li>
-                    <li><a href="#scope">Scope & Closures</a></li>
-                    
+                    <li><a href="#scope">Scope & Closures</a></li> */}
                 </ul>
             </nav>
         </header>

@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function DescriptiveItem(props) {
     return (
-        // 
         <div>
             {props.section.data.map(secData => {
                 return (

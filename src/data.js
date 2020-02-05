@@ -125,9 +125,14 @@ const data = [
                 ]
             },
             {
-                name: 'Open new tab',
+                name: 'New tab',
                 mac: 'Command + T',
                 windows: 'Ctrl + T'
+            },
+            {
+                name: 'Close tab',
+                mac: 'Command + W',
+                windows: 'Ctrl + W'
             },
             {
                 name: 'Reopen closed tabs in order closed',
@@ -548,7 +553,7 @@ const data = [
                 description: 'Displays the name and path of the current working directory that you are in.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -558,7 +563,7 @@ const data = [
                 description: 'Displays a list of all files in the current working directory and allows you to view information about each of the files.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -568,7 +573,7 @@ const data = [
                 description: 'Creates a new directory.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -578,7 +583,7 @@ const data = [
                 description: 'Creates a new file.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -588,7 +593,7 @@ const data = [
                 description: 'Move and/or rename files.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -598,7 +603,7 @@ const data = [
                 description: 'Add text to files. View contents of files. Create new files.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -608,7 +613,7 @@ const data = [
                 description: 'Displays a user manual for a command.',
                 external_links: [
                     {
-                        linkDescription: 'Documentation',
+                        linkDescription: '',
                         href: ''
                     },
                 ]
@@ -678,170 +683,217 @@ const data = [
         data: [
             {
                 name: 'git init',
-                description: '',
+                description: 'Creates an empty Git repository locally.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-init'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-init'
                     }
                 ]
             },
             {
                 name: 'git clone',
-                description: '',
+                description: 'Creates a copy of a repository into a new local directory, starts tracking remote branches and creates and checks out a new branch that is linked to the cloned repository.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-clone'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone'
+                    },
+                    { 
+                        linkDescription: 'Cloning vs Forking - Blog post by Bryan Pendleton',
+                        href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone'
                     }
                 ]
             },
             {
-                name: 'git fork',
-                description: '',
+                name: 'git remote',
+                description: 'Create, view, and delete connections to other repositories.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
                         href: ''
                     },
                     { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git status',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git diff',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git add',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git commit',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git push',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git pull',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
-                    },
-                    { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/syncing'
                     }
                 ]
             },
             {
                 name: 'git fetch',
-                description: '',
+                description: 'Download content from another repository, allowing you to view changes between your local repository and a remote repository since your last pull. Does not merge remote changes into your local repository (see git pull).',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-fetch'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/syncing/git-fetch'
+                    },
+                    { 
+                        linkDescription: 'Git Fetch vs. Git Pull',
+                        href: 'https://stackoverflow.com/a/292359/8674094'
+                    }
+                ]
+            },
+            {
+                name: 'git status',
+                description: 'Displays the status of the current git directory, including information like the files that are being tracked, changes not staged for commit and changes to be committed.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-status'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/inspecting-a-repository'
+                    }
+                ]
+            },
+            {
+                name: 'git diff',
+                description: 'Displays differences between two inputs, such as different iterations of a file, commits, branches, working tree, etc. It\'s most commonly used to view changes made to a file since the last commit.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-diff'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/saving-changes/git-diff'
+                    },
+                    { 
+                        linkDescription: 'Comparing files with git diff - Blog post by Veera Sundar',
+                        href: 'https://veerasundar.com/blog/2011/06/git-tutorial-comparing-files-with-diff/'
+                    }
+                ]
+            },
+            {
+                name: 'git add',
+                description: 'Places files into a status that allows changes to be committed. This status is often referred to as the "index" or the "staging area".',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-add'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/saving-changes'
+                    }
+                ]
+            },
+            {
+                name: 'git commit',
+                description: 'Record changes in the staging area to the repository.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-commit'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/saving-changes/git-commit'
+                    }
+                ]
+            },
+            {
+                name: 'git log',
+                description: 'Displays a log of commits made. By default it includes the commit ID, message, author and date',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-log'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/git-log'
+                    }
+                ]
+            },
+            {
+                name: 'git push',
+                description: 'Save local repository content that has been committed to a remote repository.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-push'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/syncing/git-push'
+                    }
+                ]
+            },
+            {
+                name: 'git pull',
+                description: 'Fetches content from a remote repository and merges it with another repository or local branch.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://git-scm.com/docs/git-pull'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone'
+                    },
+                    { 
+                        linkDescription: 'Git Fetch vs. Git Pull',
+                        href: 'https://stackoverflow.com/a/292359/8674094'
                     }
                 ]
             },
             {
                 name: 'git branch',
-                description: '',
+                description: 'List, create, rename or delete branches.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-branch'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/using-branches'
                     }
                 ]
             },
             {
                 name: 'git checkout',
-                description: '',
+                description: 'Switch branches or restore working tree files. ',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-checkout'
                     },
                     { 
-                        linkDescription: ' '
-                    }
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/using-branches',
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial - Feature Branch Workflow',
+                        href: 'https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow',
+                    },
                 ]
             },
             {
                 name: 'git merge',
-                description: '',
+                description: 'Combine independent branches of development.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-merge'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/using-branches/git-merge'
                     }
                 ]
             },
@@ -851,23 +903,33 @@ const data = [
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-reset'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/undoing-changes/git-reset'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial - Resetting, Checking Out & Reverting',
+                        href: 'https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting'
                     }
                 ]
             },
             {
                 name: 'git revert',
-                description: '',
+                description: 'Undos the changes introduced by a specific commit and creates a new commit based on those reverted changes and keeps the project history intact.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-revert'
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/undoing-changes/git-revert'
+                    },
+                    { 
+                        linkDescription: 'Atlassian Tutorial - Resetting, Checking Out & Reverting',
+                        href: 'https://www.atlassian.com/git/tutorials/resetting-checking-out-and-reverting'
                     }
                 ]
             },
@@ -880,12 +942,13 @@ const data = [
                         href: ''
                     },
                     { 
-                        linkDescription: ' '
+                        linkDescription: 'Atlassian Tutorial',
+                        href: 'https://www.atlassian.com/git/tutorials/saving-changes/git-stash'
                     }
                 ]
             },
             {
-                name: 'git remote',
+                name: 'git rm',
                 description: '',
                 external_links: [
                     {
@@ -893,25 +956,11 @@ const data = [
                         href: ''
                     },
                     { 
-                        linkDescription: ' '
-                    }
-                ]
-            },
-            {
-                name: 'git log',
-                description: '',
-                external_links: [
-                    {
-                        linkDescription: 'Documentation',
-                        href: ''
+                        linkDescription: '',
+                        href: 'https://www.atlassian.com/git/tutorials/undoing-changes/git-rm'
                     },
-                    { 
-                        linkDescription: ' '
-                    }
                 ]
             },
-            
-            
         ]
     },
     ////////////
