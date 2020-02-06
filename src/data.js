@@ -506,7 +506,7 @@ const data = [
                 ]
             },
             {
-                name: 'CSS Peak',
+                name: 'CSS Peek',
                 description: 'This extension allows you to view and make edits to your CSS without having to actually open your CSS files and find the corresponding rule.',
                 external_links: [
                     {
@@ -665,6 +665,73 @@ const data = [
         id: 'git_commands',
         name: 'Git Commands',
         type: '',
+        sectionDescription: '',
+        definitions: [
+            {
+                name: 'Working Directory',
+                definition: ''
+            },
+            {
+                name: 'Staging Area',
+                definition: ''
+            },            
+            {
+                name: 'Commit',
+                definition: ''
+            },            
+            {
+                name: 'Local Repository',
+                definition: ''
+            },
+            {
+                name: 'Remote Repository',
+                definition: ''
+            },
+            {
+                name: 'Master',
+                definition: ''
+            },
+            {
+                name: 'Origin',
+                definition: ''
+            },
+            {
+                name: 'HEAD',
+                definition: 'A reference to the last commit in the currently checked-out branch.'
+            },
+            {
+                name: 'Detached HEAD',
+                definition: 'When a specific commit is checked out instead of a branch. When you make changes and commit them in this state, these changes do NOT belong to any branch.'
+            },
+            {
+                name: 'Branch',
+                definition: 'Branches represent independent lines of development, each with it\'s own working directory, staging area and project history.'
+            },
+            {
+                name: 'Upstream',
+                definition: ''
+            },
+            {
+                name: 'Fast-Forward',
+                definition: ''
+            },
+            {
+                name: 'Fork',
+                definition: ''
+            },
+            {
+                name: 'Clone',
+                definition: ''
+            },
+            {
+                name: 'Pull Request',
+                definition: ''
+            },
+            {
+                name: '',
+                definition: ''
+            },
+        ],
         external_links: [
             {
                 linkDescription: 'Git Documentation',
@@ -761,7 +828,7 @@ const data = [
             },
             {
                 name: 'git diff',
-                description: 'Displays differences between two inputs, such as different iterations of a file, commits, branches, working tree, etc. It\'s most commonly used to view changes made to a file since the last commit.',
+                description: 'Displays differences between two inputs, such as different iterations of a file, commits, branches, working directory, etc. It\'s most commonly used to view changes made to a file since the last commit.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -867,7 +934,7 @@ const data = [
             },
             {
                 name: 'git checkout',
-                description: 'Switch branches or restore working tree files. ',
+                description: 'Switch branches or restore Working Directory files. ',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -899,11 +966,15 @@ const data = [
             },
             {
                 name: 'git reset',
-                description: '',
+                description: 'Reset is a veratile and potentially dangerous command that is often used to undo changes introduced by a given commit by moving the tip of a branch to a prior commit or removing changed files from the Staging Area. Reset has different options that affect changes in the Working Directory and Staging Area differently, but all options can permanently remove changes you\'ve made in some form or another so use reset with caution. It is generally advisable that you do not use reset to undo changes that have already been pushed to a public repository since other contributers could\'ve already started working off those changes, which can later cause conflicts and confusion.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
                         href: 'https://git-scm.com/docs/git-reset'
+                    },
+                    { 
+                        linkDescription: 'Documentation - Git Reset Demystified',
+                        href: 'https://www.atlassian.com/git/tutorials/undoing-changes/git-resethttps://git-scm.com/book/en/v2/Git-Tools-Reset-Demystified'
                     },
                     { 
                         linkDescription: 'Atlassian Tutorial',
@@ -917,7 +988,7 @@ const data = [
             },
             {
                 name: 'git revert',
-                description: 'Undos the changes introduced by a specific commit and creates a new commit based on those reverted changes and keeps the project history intact.',
+                description: 'Undos the changes introduced by a specific commit and creates a new commit based on those reverted changes and keeps the project history intact. Since revert keeps the history you typically want to use it when undoing commits that have been pushed to a public repository.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -935,11 +1006,15 @@ const data = [
             },
             {
                 name: 'git stash',
-                description: '',
+                description: 'Stashing takes the dirty state of your Working Directory — that is, your modified tracked files and staged changes — and saves it on a stack of unfinished changes that you can reapply at any time (even on a different branch), which allows you to do work on another branch or pull remote changes without committing the unfinished changes.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-stash'
+                    },
+                    {
+                        linkDescription: 'Documentation - Stashing and Cleaning',
+                        href: 'https://git-scm.com/book/en/v2/Git-Tools-Stashing-and-Cleaning'
                     },
                     { 
                         linkDescription: 'Atlassian Tutorial',
@@ -949,21 +1024,270 @@ const data = [
             },
             {
                 name: 'git rm',
-                description: '',
+                description: 'Remove files from a Git repository (either from the Staging Area or the Staging Area and the Working Directory). It can be thought of as the inverse of the git add command.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
-                        href: ''
+                        href: 'https://git-scm.com/docs/git-rm'
                     },
                     { 
-                        linkDescription: '',
+                        linkDescription: 'Atlassian Tutorial',
                         href: 'https://www.atlassian.com/git/tutorials/undoing-changes/git-rm'
                     },
                 ]
             },
         ]
     },
+    // ////////////
+    {
+        id: 'js_array_methods',
+        name: 'JavaScript Array Methods',
+        type: '',
+        external_links: [
+            {
+                linkDescription: 'Mozilla Developer Network',
+                href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/'
+            },
+            {
+                linkDescription: '',
+                href: ''
+            }
+        ],
+        data: [
+            {
+                name: 'pop',
+                description: 'Removes the last element from an array and returns that element. This method changes the length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop'
+                    }
+                ]
+            },
+            {
+                name: 'shift',
+                description: 'Removes the first element from an array and returns that removed element. This method changes the length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift'
+                    }
+                ]
+            },
+            {
+                name: 'push',
+                description: 'Adds one or more elements to the end of an array and returns the new length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push'
+                    }
+                ]
+            },
+            {
+                name: 'unshift',
+                description: 'Adds one or more elements to the beginning of an array and returns the new length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift'
+                    }
+                ]
+            },
+            {
+                name: 'slice',
+                description: 'Returns a shallow copy of a portion of an array into a new array selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'
+                    }
+                ]
+            },
+            {
+                name: 'splice',
+                description: 'Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'
+                    }
+                ]
+            },
+            {
+                name: 'find',
+                description: 'Returns the value of the first element in the provided array that satisfies the provided testing function.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find'
+                    }
+                ]
+            },
+            {
+                name: 'findIndex',
+                description: 'Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex'
+                    }
+                ]
+            },
+            {
+                name: 'indexOf',
+                description: 'Returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf'
+                    }
+                ]
+            },
+            {
+                name: 'lastIndexOf',
+                description: 'Returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards from the last position by default.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf'
+                    }
+                ]
+            },
+            {
+                name: 'includes',
+                description: 'Determines whether an array includes a certain value among its entries, returning true or false as appropriate.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes'
+                    }
+                ]
+            },
+            {
+                name: 'join',
+                description: 'Creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join'
+                    }
+                ]
+            },
+            {
+                name: 'concat',
+                description: 'Merges two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat'
+                    }
+                ]
+            },
+            {
+                name: 'sort',
+                description: 'Sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'
+                    }
+                ]
+            },
+            {
+                name: 'reverse',
+                description: 'Reverses an array in place. The first array element becomes the last, and the last array element becomes the first.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse'
+                    }
+                ]
+            },
+            {
+                name: 'map',
+                description: 'Creates a new array populated with the results of calling a provided function on every element in the calling array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map'
+                    }
+                ]
+            },
+            {
+                name: 'reduce',
+                description: 'Executes a reducer function (that you provide) on each element of the array, resulting in a single output value.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce'
+                    }
+                ]
+            },
+            {
+                name: 'filter',
+                description: 'Creates a new array with all elements that pass the test implemented by the provided function.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter'
+                    }
+                ]
+            },
+            {
+                name: 'every',
+                description: 'Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every'
+                    }
+                ]
+            },
+            {
+                name: 'forEach',
+                description: 'Executes a provided function once for each array element. Returns `undefined`.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach'
+                    }
+                ]
+            },
+            {
+                name: 'Array.isArray()',
+                description: 'Determines whether the passed value is an Array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray'
+                    }
+                ]
+            },
+            {
+                name: 'Array.from()',
+                description: 'Creates a new, shallow-copied Array instance from an array-like or iterable object (e.g. HTMLCollection, NodeList, Map, Set, etc.). NOTE: If you\'re using ES6 JavaScript you can also use the spread operator to do the same thing as Array.from().',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from'
+                    }
+                ]
+            },
+            {
+                name: 'Array.of()',
+                description: 'Creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments. The difference between Array.of() and the Array constructor is in the handling of integer arguments: Array.of(7) creates an array with a single element, 7, whereas Array(7) creates an empty array with a length property of 7 (Note: this implies an array of 7 empty slots, not slots with actual undefined values).',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of'
+                    }
+                ]
+            },
+        ]
+    },
     ////////////
+    
     // {
     //     id: 'data_types',
     //     name: 'Data Types',
@@ -1072,13 +1396,45 @@ const data = [
     //     ]
     // },
     ////////////
-    // {
-    //     id: 'functions',
-    //     name: 'Functions ',
-    //     type: '',
-    //     data: [
-    //     ]
-    // },
+    {
+        id: 'functions',
+        name: 'Functions ',
+        type: '',
+        external_links: [
+            {
+                linkDescription: '',
+                href: ''
+            },
+        ],
+        data: [
+            {
+                name: 'function declaration',
+                description: '',
+                // TODO: should `code` be an array?
+                code: ''
+            },
+            {
+                name: 'function expression',
+                description: '',
+                code: ''
+            },
+            {
+                name: 'named function expression',
+                description: '',
+                code: ''
+            },
+            {
+                name: 'anonymous function',
+                description: '',
+                code: ''
+            },
+            {
+                name: 'arrow function',
+                description: '',
+                code: ''
+            },
+        ]
+    },
     ////////////
     // {
     //     id: 'loops',

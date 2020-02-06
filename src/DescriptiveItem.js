@@ -12,20 +12,22 @@ export default function DescriptiveItem(props) {
                         <h4>{secData.name}</h4>
 
                         <p>{secData.description}</p>
-                        
-                        <ul>
-                            {secData.external_links.map((link, i) => (
-                                <li key={i}>
-                                    <a 
-                                        href={link.href} 
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {link.linkDescription}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
+
+                        {secData.external_links && (
+                            <ul>
+                                {secData.external_links.map((link, i) => (
+                                    <li key={i}>
+                                        <a 
+                                            href={link.href} 
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {link.linkDescription}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 )
             })}
