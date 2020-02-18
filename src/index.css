@@ -8,6 +8,9 @@
 main, nav {
   padding: 20px 40px;
 }
+/* main { 
+  background-color: rgb(83, 83, 250);
+} */
 
 h1 {
   background-color: rgb(72, 72, 72);
@@ -96,3 +99,5 @@ kbd {
   content: '- '
 }
 
+/* pre {
+} */

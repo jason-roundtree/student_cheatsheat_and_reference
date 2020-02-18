@@ -4,6 +4,7 @@ export default function DescriptiveItem(props) {
     return (
         <div>
             {props.section.data.map(secData => {
+                console.log('secData: ', secData)
                 return (
                     <div 
                         className="description_container"
@@ -11,7 +12,18 @@ export default function DescriptiveItem(props) {
                     >
                         <h4>{secData.name}</h4>
 
-                        <p>{secData.description}</p>
+                        {secData.description !== "" && (
+                            <p>{secData.description}</p>
+                        )}
+
+                        {secData.code && (
+                            <pre >
+                                <code className="language-js">
+                                    {secData.code}
+                                </code>
+                            </pre>      
+                        )}
+                        
 
                         {secData.external_links && (
                             <ul>

@@ -386,7 +386,7 @@ const data = [
     {
         id: 'vsCode_tools',
         name: 'VS Code Tools & Extentions',
-        type: 'descriptive_section',
+        type: 'descriptiveWithCode',
         data: [
             {
                 name: 'Emmet',
@@ -536,127 +536,55 @@ const data = [
         // TODO: add examples and options fields?
         id: 'command_line',
         name: 'Command Line',
-        type: 'descriptive_section',
+        type: 'descriptiveWithCode',
         data: [
             {
                 name: 'cd',
                 description: 'Change the working directory (i.e. the current folder you\'re in).',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'pwd',
                 description: 'Displays the name and path of the current working directory that you are in.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'ls',
                 description: 'Displays a list of all files in the current working directory and allows you to view information about each of the files.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'mkdir',
                 description: 'Creates a new directory.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'touch',
                 description: 'Creates a new file.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'mv',
                 description: 'Move and/or rename files.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'cat',
                 description: 'Add text to files. View contents of files. Create new files.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'man',
                 description: 'Displays a user manual for a command.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'help',
                 description: 'Displays a list of all available commands.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'rm',
                 description: 'Deletes files and directorties.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'ps',
                 description: 'Displays a list of the currently running processes (e.g. instance of a computer program that is currently running) and information associated with those processes like Process ID (PID), which can be helpful when you\'d like to force-close unresponsive programs, particularly command line programs with no GUI.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
             {
                 name: 'clear',
                 description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up.',
-                external_links: [
-                    {
-                        linkDescription: '',
-                        href: ''
-                    },
-                ]
             },
         ]
     },
@@ -668,32 +596,33 @@ const data = [
         sectionDescription: '',
         definitions: [
             {
-                name: 'Working Directory',
-                definition: ''
-            },
-            {
-                name: 'Staging Area',
-                definition: ''
-            },            
-            {
-                name: 'Commit',
-                definition: ''
-            },            
-            {
                 name: 'Local Repository',
-                definition: ''
+                definition: 'Your local copy of a project repository that you can independently make changes to.'
             },
             {
                 name: 'Remote Repository',
-                definition: ''
+                definition: 'Remote repositories are versions of your project that are hosted on the Internet or network somewhere, as opposed to your local working copy. Typically everybody involved on a project works from (git pull) and saves to (git push) a remote repository.'
             },
+            {
+                name: 'Working Directory / Working Tree',
+                definition: 'The checked-out state of a project\'s files and folders on your local machine. You must tell Git to track changes to files by running a git add command. You can view the status of the Working Directory by running the command git status.'
+            },
+            {
+                name: 'Staging Area / Index',
+                definition: 'A local cache where changes to your Git-tracked files are stored before they can be committed. Changes are recorded to the staging area with the git add command.'
+            },            
+            {
+                name: 'Commit',
+                definition: 'A snapshot of a project at a particular point in time. One of the reasons Git is so powerful is because it allows you to easily preserve, view and edit a project\'s history of changes.'
+            },    
+            {
+                // https://www.git-tower.com/learn/git/glossary/origin
+                name: 'Origin',
+                definition: 'An alias used i remote repository url. Typically it refers to the central repository that you are pushing and pulling from. It is most commonly named "origin" because that\'s what Git names it by default when you clone a remote repo for the first time, but you can also rename it.'
+            },        
             {
                 name: 'Master',
-                definition: ''
-            },
-            {
-                name: 'Origin',
-                definition: ''
+                definition: 'The default development branch. Whenever you create a git repository, Git creates a branch called "master" and checks it out for you.'
             },
             {
                 name: 'HEAD',
@@ -708,29 +637,40 @@ const data = [
                 definition: 'Branches represent independent lines of development, each with it\'s own working directory, staging area and project history.'
             },
             {
-                name: 'Upstream',
-                definition: ''
-            },
-            {
-                name: 'Fast-Forward',
-                definition: ''
-            },
-            {
+                // https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+                // https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
+                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
+                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
                 name: 'Fork',
-                definition: ''
+                definition: 'A fork is a copy of a repository and it\'s most often used when contributing to open source software. When you fork a repository it gives you your own remote copy, which you can then clone and work on locally before pushing changes back to your remote forked copy without affecting the original project. Once you\'ve pushed your changes to your remote copy you can submit a pull request to the original project maintainer. Note that forking is similar to cloning a repository but has important differences (see links above).'
             },
             {
+                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
+                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
                 name: 'Clone',
-                definition: ''
+                definition: 'A local copy of a remote repository. You often clone a repository when you want to contribute to an group/organizational project. Note that cloning is similar to forking a repository but has important differences (see links above).'
             },
             {
+                // https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
                 name: 'Pull Request',
-                definition: ''
+                definition: 'Pull requests let you tell others about changes you\'ve pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.'
             },
             {
-                name: '',
-                definition: ''
+                name: 'Untracked Files',
+                definition: 'Any files in your working directory that Git is aware of but have not been commited or staged for commit.'
             },
+            {
+                name: 'Merge',
+                definition: 'A merge occurs when you combine multiple sequences of Git histories. Most frequently used to combine two branches or combining remote changes into your local repository.'
+            }
+            // {
+            //     name: 'Upstream Branch',
+            //     definition: ''
+            // },
+            // {
+            //     name: 'Fast-Forward',
+            //     definition: ''
+            // },
         ],
         external_links: [
             {
@@ -776,7 +716,7 @@ const data = [
                     },
                     { 
                         linkDescription: 'Cloning vs Forking - Blog post by Bryan Pendleton',
-                        href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone'
+                        href: 'http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html'
                     }
                 ]
             },
@@ -966,7 +906,7 @@ const data = [
             },
             {
                 name: 'git reset',
-                description: 'Reset is a veratile and potentially dangerous command that is often used to undo changes introduced by a given commit by moving the tip of a branch to a prior commit or removing changed files from the Staging Area. Reset has different options that affect changes in the Working Directory and Staging Area differently, but all options can permanently remove changes you\'ve made in some form or another so use reset with caution. It is generally advisable that you do not use reset to undo changes that have already been pushed to a public repository since other contributers could\'ve already started working off those changes, which can later cause conflicts and confusion.',
+                description: 'Reset is a versatile and potentially dangerous command that is often used to undo changes introduced by a given commit by moving the tip of a branch to a prior commit or removing changed files from the Staging Area. Reset has different options that affect changes in the Working Directory and Staging Area differently, but all options can permanently remove changes you\'ve made in some form or another so use reset with caution. It is generally advisable that you do not use reset to undo changes that have already been pushed to a public repository since other contributers could\'ve already started working off those changes, which can later cause conflicts and confusion.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -1047,10 +987,6 @@ const data = [
             {
                 linkDescription: 'Mozilla Developer Network',
                 href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/'
-            },
-            {
-                linkDescription: '',
-                href: ''
             }
         ],
         data: [
@@ -1287,7 +1223,90 @@ const data = [
         ]
     },
     ////////////
-    
+    {
+        id: 'javascript_functions',
+        name: 'JavaScript Functions ',
+        type: 'descriptiveWithCode',
+        external_links: [
+            {
+                linkDescription: '',
+                href: ''
+            },
+        ],
+        data: [
+            {
+                name: 'function declaration',
+                description: '',
+                // TODO: should `code` be an array?
+                code: `
+                    function doSomething() {
+                        return 'Something!'
+                    }
+                `
+            },
+            {
+                name: 'function expression',
+                description: '',
+                code: `
+                    const doSomething = function() {
+                        return 'Something!';
+                    }
+                `
+            },
+            {
+                name: 'named function expression',
+                description: '',
+                code: `
+                    const doSomething = function something() {
+                        return 'Something!';
+                    }
+                `
+            },
+            {
+                name: 'anonymous function',
+                description: 'Commonly used in callbacks or assigned to function expression.',
+                code: `
+                    function() {
+                        return 'Something!';
+                    }
+                `
+            },
+            {
+                name: 'ES6 arrow function',
+                description: '',
+                code: `
+                    const doSomething = () => {
+                        return 'Something!';
+                    }
+                `
+            },
+            {
+                name: 'function as object method',
+                description: '',
+                code: `
+                    const person = {
+                        name: 'Jason',
+                        introduce: function() {
+                            return 'Hello my name is ' + 'this.name';
+                        }
+                    }
+                `
+            },
+            {
+                name: 'ES6 shorthand-function as object method',
+                description: '',
+                code: `
+                    const person = {
+                        name: 'Jason',
+                        introduce() {
+                            return 'Hello my name is ' + 'this.name';
+                        }
+                    }
+                `
+            },
+        ]
+    },
+    ////////////
     // {
     //     id: 'data_types',
     //     name: 'Data Types',
@@ -1395,46 +1414,6 @@ const data = [
     //         }
     //     ]
     // },
-    ////////////
-    {
-        id: 'functions',
-        name: 'Functions ',
-        type: '',
-        external_links: [
-            {
-                linkDescription: '',
-                href: ''
-            },
-        ],
-        data: [
-            {
-                name: 'function declaration',
-                description: '',
-                // TODO: should `code` be an array?
-                code: ''
-            },
-            {
-                name: 'function expression',
-                description: '',
-                code: ''
-            },
-            {
-                name: 'named function expression',
-                description: '',
-                code: ''
-            },
-            {
-                name: 'anonymous function',
-                description: '',
-                code: ''
-            },
-            {
-                name: 'arrow function',
-                description: '',
-                code: ''
-            },
-        ]
-    },
     ////////////
     // {
     //     id: 'loops',
