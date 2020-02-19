@@ -1321,19 +1321,25 @@ const data = [
         return 'Something!'
     })();
 
-    // or you can put the final pair of parens inside if it looks better to you:
-    (function() {
-        return 'Something!'
-    }());
-
-    // you can also declare ES6 arrow functions as IIFEs:
+    // with ES6 arrow function:
     (() => {
         return 'Something!'
     })();
+
+    // Note: There some other ways to write IIFEs but these are probably the most common
                 `
             },
         ]
     },
+    ////////////
+    {
+        id: 'dom',
+        name: 'DOM Traversing & Manipulation',
+        type: 'descriptiveWithCode',
+        data: [{
+            
+        }]
+    }
     ////////////
     // {
     //     id: 'data_types',
