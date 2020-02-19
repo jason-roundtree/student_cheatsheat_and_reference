@@ -19,7 +19,7 @@ export default function TopicSection(props) {
                     />
                 )
             }
-            </section>             
+        </section>             
     )
 }
 

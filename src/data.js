@@ -584,7 +584,7 @@ const data = [
             },
             {
                 name: 'clear',
-                description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up.',
+                description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up with the arrow key.',
             },
         ]
     },
@@ -906,7 +906,7 @@ const data = [
             },
             {
                 name: 'git reset',
-                description: 'Reset is a versatile and potentially dangerous command that is often used to undo changes introduced by a given commit by moving the tip of a branch to a prior commit or removing changed files from the Staging Area. Reset has different options that affect changes in the Working Directory and Staging Area differently, but all options can permanently remove changes you\'ve made in some form or another so use reset with caution. It is generally advisable that you do not use reset to undo changes that have already been pushed to a public repository since other contributers could\'ve already started working off those changes, which can later cause conflicts and confusion.',
+                description: 'A versatile and potentially dangerous command that is often used to undo changes introduced by a given commit by moving the tip of a branch to a prior commit or removing changed files from the Staging Area. You can use the command with different options that affect changes in the Working Directory and Staging Area differently, but all options can permanently remove changes you\'ve made in some form or another so use reset with caution. It is generally advisable that you do not use reset to undo changes that have already been pushed to a public repository since other contributers could\'ve already started working off those changes, which can later cause conflicts and confusion.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -928,7 +928,7 @@ const data = [
             },
             {
                 name: 'git revert',
-                description: 'Undos the changes introduced by a specific commit and creates a new commit based on those reverted changes and keeps the project history intact. Since revert keeps the history you typically want to use it when undoing commits that have been pushed to a public repository.',
+                description: 'Undo the changes introduced by a specific commit and creates a new commit based on those reverted changes and keeps the project history intact. Since revert keeps the history you typically want to use it when undoing commits that have been pushed to a public repository.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -946,7 +946,7 @@ const data = [
             },
             {
                 name: 'git stash',
-                description: 'Stashing takes the dirty state of your Working Directory — that is, your modified tracked files and staged changes — and saves it on a stack of unfinished changes that you can reapply at any time (even on a different branch), which allows you to do work on another branch or pull remote changes without committing the unfinished changes.',
+                description: 'Take the dirty state of your Working Directory — that is, your modified tracked files and staged changes — and temporarily store it on a stack of unfinished changes that you can reapply at any time (even on a different branch). This allows you to do things like work on another branch or pull remote changes without committing the unfinished changes.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -991,65 +991,36 @@ const data = [
         ],
         data: [
             {
-                name: 'pop',
-                description: 'Removes the last element from an array and returns that element. This method changes the length of the array.',
+                name: 'concat',
+                description: 'Merges two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat'
                     }
                 ]
             },
             {
-                name: 'shift',
-                description: 'Removes the first element from an array and returns that removed element. This method changes the length of the array.',
+                name: 'every',
+                description: 'Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every'
                     }
                 ]
             },
             {
-                name: 'push',
-                description: 'Adds one or more elements to the end of an array and returns the new length of the array.',
+                name: 'filter',
+                description: 'Creates a new array with all elements that pass the test implemented by the provided function.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter'
                     }
                 ]
             },
-            {
-                name: 'unshift',
-                description: 'Adds one or more elements to the beginning of an array and returns the new length of the array.',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift'
-                    }
-                ]
-            },
-            {
-                name: 'slice',
-                description: 'Returns a shallow copy of a portion of an array into a new array selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'
-                    }
-                ]
-            },
-            {
-                name: 'splice',
-                description: 'Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'
-                    }
-                ]
-            },
+            
             {
                 name: 'find',
                 description: 'Returns the value of the first element in the provided array that satisfies the provided testing function.',
@@ -1071,22 +1042,12 @@ const data = [
                 ]
             },
             {
-                name: 'indexOf',
-                description: 'Returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+                name: 'forEach',
+                description: 'Executes a provided function once for each array element. Returns `undefined`.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf'
-                    }
-                ]
-            },
-            {
-                name: 'lastIndexOf',
-                description: 'Returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards from the last position by default.',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach'
                     }
                 ]
             },
@@ -1101,6 +1062,16 @@ const data = [
                 ]
             },
             {
+                name: 'indexOf',
+                description: 'Returns the first index at which a given element can be found in the array, or -1 if it is not present.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf'
+                    }
+                ]
+            },
+            {
                 name: 'join',
                 description: 'Creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.',
                 external_links: [
@@ -1111,32 +1082,12 @@ const data = [
                 ]
             },
             {
-                name: 'concat',
-                description: 'Merges two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                name: 'lastIndexOf',
+                description: 'Returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards from the last position by default.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat'
-                    }
-                ]
-            },
-            {
-                name: 'sort',
-                description: 'Sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'
-                    }
-                ]
-            },
-            {
-                name: 'reverse',
-                description: 'Reverses an array in place. The first array element becomes the last, and the last array element becomes the first.',
-                external_links: [
-                    {
-                        linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf'
                     }
                 ]
             },
@@ -1151,6 +1102,26 @@ const data = [
                 ]
             },
             {
+                name: 'pop',
+                description: 'Removes the last element from an array and returns that element. This method changes the length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop'
+                    }
+                ]
+            },
+            {
+                name: 'push',
+                description: 'Adds one or more elements to the end of an array and returns the new length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push'
+                    }
+                ]
+            },
+            {
                 name: 'reduce',
                 description: 'Executes a reducer function (that you provide) on each element of the array, resulting in a single output value.',
                 external_links: [
@@ -1161,42 +1132,62 @@ const data = [
                 ]
             },
             {
-                name: 'filter',
-                description: 'Creates a new array with all elements that pass the test implemented by the provided function.',
+                name: 'reverse',
+                description: 'Reverses an array in place. The first array element becomes the last, and the last array element becomes the first.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse'
                     }
                 ]
             },
             {
-                name: 'every',
-                description: 'Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.',
+                name: 'shift',
+                description: 'Removes the first element from an array and returns that removed element. This method changes the length of the array.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift'
                     }
                 ]
             },
             {
-                name: 'forEach',
-                description: 'Executes a provided function once for each array element. Returns `undefined`.',
+                name: 'slice',
+                description: 'Returns a shallow copy of a portion of an array into a new array selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice'
                     }
                 ]
             },
             {
-                name: 'Array.isArray()',
-                description: 'Determines whether the passed value is an Array.',
+                name: 'sort',
+                description: 'Sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
-                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray'
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort'
+                    }
+                ]
+            },
+            {
+                name: 'splice',
+                description: 'Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice'
+                    }
+                ]
+            },
+            {
+                name: 'unshift',
+                description: 'Adds one or more elements to the beginning of an array and returns the new length of the array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift'
                     }
                 ]
             },
@@ -1211,6 +1202,16 @@ const data = [
                 ]
             },
             {
+                name: 'Array.isArray()',
+                description: 'Determines whether the passed value is an Array.',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray'
+                    }
+                ]
+            },
+            {
                 name: 'Array.of()',
                 description: 'Creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments. The difference between Array.of() and the Array constructor is in the handling of integer arguments: Array.of(7) creates an array with a single element, 7, whereas Array(7) creates an empty array with a length property of 7 (Note: this implies an array of 7 empty slots, not slots with actual undefined values).',
                 external_links: [
@@ -1219,7 +1220,7 @@ const data = [
                         href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of'
                     }
                 ]
-            },
+            }
         ]
     },
     ////////////
@@ -1229,79 +1230,106 @@ const data = [
         type: 'descriptiveWithCode',
         external_links: [
             {
-                linkDescription: '',
-                href: ''
+                linkDescription: '6 Ways to Declare JavaScript Functions by Dmitri Pavlutin',
+                href: 'https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/#21-named-function-expression'
             },
         ],
         data: [
+            // TODO: way to get these to ignore whitespace so functions can have proper indentation here?
             {
-                name: 'function declaration',
-                description: '',
-                // TODO: should `code` be an array?
+                name: 'function declaration/statement',
+                description: 'A standard function with a name.',
                 code: `
-                    function doSomething() {
-                        return 'Something!'
-                    }
+    function doSomething() {
+        return 'Something!';
+    }
                 `
             },
             {
                 name: 'function expression',
-                description: '',
+                description: 'Since functions are first-class and can be treated like other types of values you can assign a function to a variable that can be used to call the function.',
                 code: `
-                    const doSomething = function() {
-                        return 'Something!';
-                    }
+    const doSomething = function() {
+        return 'Something!';
+    }
                 `
             },
             {
                 name: 'named function expression',
-                description: '',
+                description: 'Similar to a function expression but with a name instead of just an anonymous function. Usually you won\'t use this form or see it too often but it can be helpful because it allows function expressions to be identified in stack-trace errors and for expressions to be called from within themselves when working with recursion.',
                 code: `
-                    const doSomething = function something() {
-                        return 'Something!';
-                    }
+    const doSomething = function something() {
+        return 'Something!';
+    }
                 `
             },
             {
                 name: 'anonymous function',
-                description: 'Commonly used in callbacks or assigned to function expression.',
+                description: 'Often used as callbacks or assigned to a variable in function expressions.',
                 code: `
-                    function() {
-                        return 'Something!';
-                    }
+    function() {
+        return 'Something!';
+    }
                 `
             },
             {
                 name: 'ES6 arrow function',
                 description: '',
                 code: `
-                    const doSomething = () => {
-                        return 'Something!';
-                    }
-                `
+    const doSomething = () => {
+        return 'Something!';
+    }
+
+    // with only 1 parameter the parens are optional:
+    const doSomething = thing => {
+        return \`Do this: \${thing}!\`;
+    }
+
+    // with one line and implicit return you don't need curly brackets:
+    const doSomething = () => 'Something!'; 
+            `
             },
             {
                 name: 'function as object method',
                 description: '',
                 code: `
-                    const person = {
-                        name: 'Jason',
-                        introduce: function() {
-                            return 'Hello my name is ' + 'this.name';
-                        }
-                    }
+    const person = {
+        name: 'Jason',
+        introduce: function() {
+            return \`Hello! My name is \${this.name}\`;
+        }
+    }
                 `
             },
             {
                 name: 'ES6 shorthand-function as object method',
-                description: '',
+                description: 'You can omit the word \'function\' and place the parens directly after the function name.', 
                 code: `
-                    const person = {
-                        name: 'Jason',
-                        introduce() {
-                            return 'Hello my name is ' + 'this.name';
-                        }
-                    }
+    const person = {
+        name: 'Jason',
+        introduce() {
+            return \`Hello! My name is \${this.name}\`;
+        }
+    }
+                `
+            },
+            {
+                name: 'immediately invoked function expression (IIFE - pronounced “iffy”)',
+                description: 'A function that is executed immediately. IIFEs were used more frequently in older versions of JavaScript as a way to create modules and keep code private and out of the global scope.',
+                code: `
+    (function() {
+        return 'Something!'
+    })();
+
+    // or you can put the final pair of parens inside if it looks better to you:
+    (function() {
+        return 'Something!'
+    }());
+
+    // you can also declare ES6 arrow functions as IIFEs:
+    (() => {
+        return 'Something!'
+    })();
                 `
             },
         ]
