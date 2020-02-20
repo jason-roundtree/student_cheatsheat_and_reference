@@ -964,7 +964,8 @@ const data = [
             },
             {
                 name: 'git rm',
-                description: 'Remove files from a Git repository (either from the Staging Area or the Staging Area and the Working Directory). It can be thought of as the inverse of the git add command.',
+                description: 'Remove files from a Git repository (either from the Staging Area or the Staging Area and the Working Directory).', 
+                // It can be thought of as the inverse of the git add command.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -1192,8 +1193,8 @@ const data = [
                 ]
             },
             {
-                name: 'Array.from()',
-                description: 'Creates a new, shallow-copied Array instance from an array-like or iterable object (e.g. HTMLCollection, NodeList, Map, Set, etc.). NOTE: If you\'re using ES6 JavaScript you can also use the spread operator to do the same thing as Array.from().',
+                name: 'Array.from',
+                description: 'Creates a new, shallow-copied Array instance from an array-like or iterable object (e.g. HTMLCollection, NodeList, Map, Set, etc.). NOTE: If you\'re using ES6 JavaScript you can also use the spread operator to achieve the same thing.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
@@ -1202,7 +1203,7 @@ const data = [
                 ]
             },
             {
-                name: 'Array.isArray()',
+                name: 'Array.isArray',
                 description: 'Determines whether the passed value is an Array.',
                 external_links: [
                     {
@@ -1212,7 +1213,7 @@ const data = [
                 ]
             },
             {
-                name: 'Array.of()',
+                name: 'Array.of',
                 description: 'Creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments. The difference between Array.of() and the Array constructor is in the handling of integer arguments: Array.of(7) creates an array with a single element, 7, whereas Array(7) creates an empty array with a length property of 7 (Note: this implies an array of 7 empty slots, not slots with actual undefined values).',
                 external_links: [
                     {
@@ -1236,29 +1237,12 @@ const data = [
         ],
         data: [
             // TODO: way to get these to ignore whitespace so functions can have proper indentation here?
+            // TODO: add get and set style methods?
             {
                 name: 'function declaration/statement',
                 description: 'A standard function with a name.',
                 code: `
     function doSomething() {
-        return 'Something!';
-    }
-                `
-            },
-            {
-                name: 'function expression',
-                description: 'Since functions are first-class and can be treated like other types of values you can assign a function to a variable that can be used to call the function.',
-                code: `
-    const doSomething = function() {
-        return 'Something!';
-    }
-                `
-            },
-            {
-                name: 'named function expression',
-                description: 'Similar to a function expression but with a name instead of just an anonymous function. Usually you won\'t use this form or see it too often but it can be helpful because it allows function expressions to be identified in stack-trace errors and for expressions to be called from within themselves when working with recursion.',
-                code: `
-    const doSomething = function something() {
         return 'Something!';
     }
                 `
@@ -1273,19 +1257,37 @@ const data = [
                 `
             },
             {
+                name: 'function expression',
+                description: 'Since functions are first-class and can be treated like other types of values you can assign a function to a variable that can then be used to call the function.',
+                code: `
+    const doSomething = function() {
+        return 'Something!';
+    };
+                `
+            },
+            {
+                name: 'named function expression',
+                description: 'Similar to a function expression but with a name instead of just an anonymous function. Usually you won\'t use this form or see it too often but it can be helpful because it allows function expressions to be identified in stack-trace errors and for expressions to be called from within themselves when working with recursion.',
+                code: `
+    const doSomething = function something() {
+        return 'Something!';
+    };
+                `
+            },
+            {
                 name: 'ES6 arrow function',
                 description: '',
                 code: `
     const doSomething = () => {
         return 'Something!';
-    }
+    };
 
-    // with only 1 parameter the parens are optional:
+    // with only 1 parameter the parens are optional
     const doSomething = thing => {
         return \`Do this: \${thing}!\`;
-    }
+    };
 
-    // with one line and implicit return you don't need curly brackets:
+    // with one line and implicit return you don't need curly brackets
     const doSomething = () => 'Something!'; 
             `
             },
@@ -1321,7 +1323,7 @@ const data = [
         return 'Something!'
     })();
 
-    // with ES6 arrow function:
+    // with ES6 arrow function
     (() => {
         return 'Something!'
     })();
@@ -1329,17 +1331,333 @@ const data = [
     // Note: There some other ways to write IIFEs but these are probably the most common
                 `
             },
+            {
+                name: 'constructor function',
+                description: 'Pre-ES6 way to have a function that acts as a sort of "blueprint" for creating objects. The convention is that the name of function should start with an upper-case letter so that the function is easily reconizable as a contructor. The function parameters will often be named the same thing as the object properties inside the function but they don\'t have to be, as the example below shows.',
+                code: `
+    function Person(n, a) {
+        this.name = n;
+        this.age = a;
+        // adding a function inside the constructor will
+        // add the function to each object created
+        // by this constructor, which is often 
+        // unecessary since it takes up more memory
+        this.sayHelloV1 = function() {
+            return \`Hello! My name is \${this.name} and I'm \${this.age} years young!\`
+        }
+    }
+    
+    // by adding a function to Person.prototype 
+    // you allow all Person objects to access it
+    Person.prototype.sayHelloV2 = function() {
+        return \`Hello! My name is \${this.name} and I'm \${this.age} years young!\`
+    } 
+
+    // create new Person object
+    const joeBlow = new Person('Joe Blow', 30);
+                            `
+            },
+            {
+                name: 'functions as methods of ES6 class',
+                description: '',
+                code: `
+    class Person {
+        // built-in constructor function that comes with class
+        constructor(n, a) {
+            this.name = n;
+            this.age = a;
+        }
+
+        // user-defined method that gets added to Person.prototype 
+        // so all Person objects can access it
+        sayHello() {
+            return \`Hello! My name is \${this.name} and I'm \${this.age} years young!\`
+        }
+
+        // Adding the "static" keyword before a function name defines 
+        // a static method for a class. Static methods are called without 
+        // instantiating their class and cannot be called through a class instance. 
+        static staticMethodHere() {
+            return "I'm a static method that can only be called from the Person class itself!"
+        }
+    }
+    // create new Person object:
+    const joeBlow = new Person('Joe Blow', 30);
+    // call prototype method:
+    joeBlow.sayHello();
+    // call static method
+    Person.staticMethodHere();
+                `
+            },
         ]
     },
     ////////////
     {
         id: 'dom',
-        name: 'DOM Traversing & Manipulation',
+        name: 'DOM Targeting, Traversing & Manipulation',
         type: 'descriptiveWithCode',
-        data: [{
-            
-        }]
-    }
+        data: [
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
+                name: 'querySelector',
+                description: 'Returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
+                name: 'querySelectorAll',
+                description: 'Returns a static (not live) NodeList representing a list of elements matching the specified group of selectors which are descendants of the element on which the method was called.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName
+                name: 'getElementsByTagName',
+                description: 'Returns a live HTMLCollection of elements with the given tag name. All descendants of the specified element are searched, but not the element itself. The returned list is live, which means it updates itself with the DOM tree automatically. Therefore, there is no need to call Element.getElementsByTagName() with the same element and arguments repeatedly if the DOM changes in between calls.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+                name: 'getElementById',
+                description: 'Returns an Element object representing the element whose id property matches the specified string. ',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByClassName
+                name: 'getElementsByClassName',
+                description: 'Returns a live HTMLCollection which contains every descendant element which has the specified class name or names.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
+                name: 'firstChild',
+                description: 'Read-only property that returns a node\'s first child in the tree, or null if the node has no children.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild
+                name: 'lastChild',
+                description: 'Read-only property that returns the last child of a node. If its parent is an element, then the child is generally an element node, a text node, or a comment node. It returns null if there are no child elements.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
+                name: 'childNodes',
+                description: 'Read-only property that returns a live NodeList of child nodes of the given element. The first child node is assigned index 0.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children
+                name: 'children',
+                description: 'Read-only property that returns a live HTMLCollection, which contains all of the child elements of the node upon which it was called.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode
+                name: 'parentNode',
+                description: 'Read-only property that returns the parent of the specified node in the DOM tree.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement
+                name: 'parentElement',
+                description: 'Read-only property returns a DOM node\'s parent Element, or null if the node either has no parent, or its parent isn\'t a DOM Element.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling
+                name: 'previousSibling',
+                description: 'Read-only property that returns the node immediately preceding the specified one in its parent\'s childNodes list, or null if the specified node is the first in that list.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling
+                name: 'nextSibling',
+                description: 'Read-only property that returns the node immediately following the specified one in their parent\'s childNodes, or returns null if the specified node is the last child in the parent element.',
+                code: ''
+            },
+            {
+                // TODO: find out what "Will return itself" means
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+                name: 'closest',
+                description: 'Starting with the target element itself it traverses parents (heading toward the document root) of the element until it finds a node that matches the provided selectorString. Will return itself or the matching ancestor. If no such element exists, it returns null.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
+                name: 'append',
+                description: 'Inserts a set of Node objects or DOMString objects after the last child of the ParentNode',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
+                name: 'prepend',
+                description: 'Inserts a set of Node objects or DOMString objects before the first child of the ParentNode.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+                name: 'appendChild',
+                description: 'Adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node)',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove
+                name: 'remove',
+                description: 'Removes the object from the tree it belongs to.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
+                name: 'removeChild',
+                description: 'Removes a child node from the DOM and returns the removed node.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild
+                name: 'replaceChild',
+                description: 'Replaces a child node within the given (parent) node.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+                name: 'innerHTML',
+                description: 'Gets or sets the HTML markup contained within the element.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+                name: 'textContent',
+                description: 'Gets or sets the text content of the node and its descendants.',
+                code: ''
+            },
+            {
+                // TODO: leave this in? Definitely note differences between textContent and innerHTML
+                // https://www.w3schools.com/jsref/prop_node_innertext.asp
+                name: 'innerText',
+                description: 'Gets or sets the text content of the specified node, and all its descendants. As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied it to the clipboard.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
+                name: 'createElement',
+                description: 'Creates the HTML element specified by tagName.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode
+                name: 'createTextNode',
+                description: 'Creates a new Text node. This method can be used to escape HTML characters.',
+                code: ''
+            },
+            // {
+            //     // https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
+            //     name: 'cloneNode',
+            //     description: 'Returns a duplicate of the node on which this method was called.',
+            //     code: ''
+            // },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
+                name: 'setAttribute',
+                description: 'Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute
+                name: 'getAttribute',
+                description: 'Returns the value of a specified attribute on the element. If the given attribute does not exist, the value returned will either be null or an empty string',
+                code: ''
+            },
+            // {
+            //     // https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes
+            //     name: 'attributes',
+            //     description: 'Returns a live collection of all attribute nodes registered to the specified node. It is a NamedNodeMap, not an Array, so it has no Array methods and the Attr nodes\' indexes may differ among browsers. To be more specific, attributes is a key/value pair of strings that represents any information regarding that attribute.',
+            //     code: ''
+            // },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style
+                name: 'style',
+                description: 'Gets and sets the inline style of an element. When getting, it returns a CSSStyleDeclaration object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element\'s inline style attribute.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/className
+                name: 'className',
+                // TODO: validate how this works with multiple classes
+                description: 'Gets and sets the value of the class attribute of the specified element. If there are multiple classes on the element then the returned value will be a string of space-separated class names.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
+                name: 'insertAdjacentElement',
+                description: 'Inserts an element node at a given position relative to the element it is invoked upon.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+                name: 'insertAdjacentHTML',
+                description: 'Parses the specified text as HTML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML manipulation.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText
+                name: 'insertAdjacentText',
+                description: 'Inserts a given text node at a given position relative to the element it is invoked upon.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore
+                name: 'insertBefore',
+                description: 'Inserts a node before a reference node as a child of a specified parent node. If the given node already exists in the document, insertBefore() moves it from its current position to the new position. (That is, it will automatically be removed from its existing parent before appending it to the specified new parent.)',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
+                name: 'contains',
+                description: 'Returns a Boolean value indicating whether a node is a descendant of a given node, i.e. the node itself, one of its direct children (childNodes), one of the children\'s direct children, and so on.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
+                name: 'nodeName',
+                description: 'Read-only property that returns the name of the current node as a string.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
+                name: 'tagName',
+                description: 'Read-only property of the Element interface returns the tag name of the element on which it\'s called. For example, if the element is an <img>, its tagName property is "IMG"',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
+                name: 'nodeType',
+                description: 'Read-only property that returns an integer that identifies what type of node something is. It distinguishes different kind of nodes from each other, such as elements, text and comments.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue
+                name: 'nodeValue',
+                description: 'Returns or sets the value of the a node.',
+                code: ''
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+                name: 'classList',
+                description: 'Read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list. Using classList is a convenient alternative to accessing an element\'s list of classes as a space-delimited string via element.className.',
+                code: ''
+            },
+            {
+                name: 'addEventListener',
+                description: '',
+                code: ''
+            },
+            {
+                name: 'removeEventListener',
+                description: '',
+                code: ''
+            },
+        ]
+    },
     ////////////
     // {
     //     id: 'data_types',
