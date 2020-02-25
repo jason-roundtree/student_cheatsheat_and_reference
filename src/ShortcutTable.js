@@ -14,7 +14,7 @@ export default function ShortcutTable(props) {
                     {props.section.data.map(secData => {
                         return (
                             <tr key={secData.name}>
-                                <th>{secData.name}</th>
+                                <th className="row_header">{secData.name}</th>
                                 <td><kbd>{secData.mac}</kbd></td>
                                 <td><kbd>{secData.windows}</kbd></td>
                             </tr>

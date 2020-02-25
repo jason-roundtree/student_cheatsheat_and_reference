@@ -15,10 +15,21 @@ h1 {
   background-color: rgb(72, 72, 72);
   color: white;
   padding: 20px 40px;
+  font-family: 'Barlow', sans-serif;
 }
 
 h2 {
   padding: 0 40px;
+}
+
+h3 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.5em;
+  padding: 20px 0 5px;
+  border-bottom: 2px dashed rgb(252, 93, 93);
+  /* padding: 20px 0 20px 10px;
+  background-color: rgb(72, 72, 72);
+  color: rgb(250, 142, 142); */
 }
 
 li {
@@ -57,6 +68,14 @@ td {
   padding: 5px 10px;
 }
 
+tr:nth-of-type(even) {
+  background-color: rgb(235, 232, 232);
+}
+
+.row_header {
+  font-family: 'Barlow', sans-serif;
+}
+
 tr th:first-child, tr td:first-child {
   width: 20%;
 }
@@ -72,7 +91,9 @@ kbd {
   white-space: nowrap;
 }
 
-/* DescriptiveItem.js */
+.incomplete_section::after {
+  content: ' (Coming Soon)'
+}
 
 .description_container {
   border: 1px solid rgb(63, 134, 242);
@@ -82,9 +103,10 @@ kbd {
 
 .description_container h4 {
   font-weight: 700;
+  font-size: 1.2em;
   background-color: rgb(63, 134, 242);
   color: white;
-  padding: 5px;
+  padding: 10px;
 }
 
 .description_container p, 
@@ -92,8 +114,9 @@ kbd {
   padding: 5px;
 }
 .description_container p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2em;
   background-color: white;
-  /* font-size: .85em; */
 }
 
 .description_container ul {

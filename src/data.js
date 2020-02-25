@@ -535,7 +535,7 @@ const data = [
     {
         // TODO: add examples and options fields?
         id: 'command_line',
-        name: 'Command Line',
+        name: 'Command Line Interface',
         type: 'descriptiveWithCode',
         data: [
             {
@@ -592,7 +592,7 @@ const data = [
     {
         id: 'git_commands',
         name: 'Git Commands',
-        type: '',
+        type: 'descriptiveWithCode',
         sectionDescription: '',
         definitions: [
             {
@@ -983,7 +983,7 @@ const data = [
     {
         id: 'js_array_methods',
         name: 'JavaScript Array Methods',
-        type: '',
+        type: 'descriptiveWithCode',
         external_links: [
             {
                 linkDescription: 'Mozilla Developer Network',
@@ -1333,7 +1333,7 @@ const data = [
             },
             {
                 name: 'constructor function',
-                description: 'Pre-ES6 way to have a function that acts as a sort of "blueprint" for creating objects. The convention is that the name of function should start with an upper-case letter so that the function is easily reconizable as a contructor. The function parameters will often be named the same thing as the object properties inside the function but they don\'t have to be, as the example below shows.',
+                description: 'Pre-ES6 way to use a function that acts as a "blueprint" for creating objects. The convention is that the name of the function should start with an upper-case letter so that it\'s easily reconizable as a contructor. The function parameters will often be named the same thing as the object properties inside the function but they don\'t have to be, as the example below shows.',
                 code: `
     function Person(n, a) {
         this.name = n;
@@ -1388,6 +1388,140 @@ const data = [
     // call static method
     Person.staticMethodHere();
                 `
+            },
+        ]
+    },
+    ////////////
+    {
+        id: 'loops',
+        name: 'JavaScript Loops',
+        type: 'descriptiveWithCode',
+        data: [
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+                name: 'for',
+                description: 'Gives you control over how the loop starts, runs, and ends. Most commonly used to loop over arrays and strings.',
+                syntax: `for ([initializer], [condition to evaluate], [post-loop expression]) { 
+                    [statement]
+                }`,
+                code: `
+    // common form used to iterate through each value in an array or another iterable from start to end
+    for (let i = 0; i < iterable.length; i++) { ... }
+
+    // loop from end of iterable to start
+    for (let i = iterable.length - 1; i > -1; i--) { ... }        
+
+    // loop over every other item of a iterable starting from the third item
+    for (let i = 2; i < iterable.length; i += 2) { ... }
+                
+    // loops can be nested
+    for (let i = 0; i < iterableOne.length; i++) {
+        for (let j = 0; j < iterableTwo.length; j++) {
+            ...
+        }
+     }
+            `
+            },
+            {
+                name: 'for-of',
+                description: 'Creates a loop iterating over iterable objects such as String, Array, array-like objects (e.g. HTMLCollection, NodeList), Map, Set, and user-defined iterables. Does not loop over normal JavaScript objects (see For-in loop, Object.keys, Object.values, Object.entries).',
+                syntax: 'for ([variable] of [iterable]) {}',
+                code: `
+    const technologies = ['JS', 'HTML', 'CSS'];
+    for (const val of technologies) {
+        console.log(value); // logs 'JS', 'HTML', 'CSS'
+    }
+
+    // If you'll be reassigning/operating on the values you're looping over you can declare the variable with let instead of const
+    const numbers = [10, 20, 30];
+    for (let val of numbers) {
+        value += 1;
+        console.log(value); // logs 11, 21, 31
+    }
+            `
+            },
+            {
+                name: 'for-in',
+                description: 'Iterates over all enumerable properties of an object, including inherited properties/methods from the prototype chain (see 2nd example below). Most object properties that you\'ll create will be enumerable, but it\'s possible to set properties to be non-enumerable so that they don\'t show up in for-in loops.',
+                syntax: 'for ([variable] in [iterable]) {}',
+                code: `
+    const myObject = { a: 1, b: 2, c: 3 };
+    for (const property in myObject) {
+        console.log(\`\${property}: \${myObject[property]}\`); // logs "a: 1", "b: 2", "c: 3"
+    }
+
+    // Example showing that enumerable, prototype properties are iterated 
+    function Person(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+    }
+    Person.prototype.sayHello = function() {
+        return \`Hello! My name is \${this.firstName} \${this.lastName}!\`;
+    } 
+    const jason = new Person('jason', 'roundtree')
+    for (const property in jason) {
+        console.log(property); // logs 'jason', 'roundtree', 'sayHello'
+        // To check if a property exists on an object and is not inherited you can use the .hasOwnProperty method
+    }
+    // NOTE: prototype methods on ES6 classes are not enumerable and will not show up in for-in loops
+                `
+            },
+            {
+                name: 'while',
+                description: '',
+                syntax: 'while ([condition]) { [statement] }',
+                code: `
+    let i = 0;
+    while (i < 3) {
+        console.log(i); // logs 0, 1, 2
+        i++;
+    }
+                `
+            },
+            {
+                name: 'do-while',
+                description: 'Similar to a while loop, but executes the statement at least once, even if the condition starts out as false.',
+                syntax: 'do { [statement] } while ([condition])',
+                code: `
+    let i = 0;
+    do {
+        console.log(i) // logs 0, 1, 2
+        i++;
+    } while (i < 3 && i !== 0);
+                `
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+                name: 'forEach',
+                description: 'Executes the provided function callback once for each array elemen in ascending order. Always returns "undefined".',
+                syntax: `array.forEach(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
+
+                }, thisContext)`,
+                code: `
+    const array = ['a', 'b', 'c'];
+    array.forEach(item => {
+        console.log(item); // logs 'a', 'b', 'c'
+    });            
+                `
+            },
+            {
+                name: 'map',
+                description: 'Creates a new array populated with the results of calling a provided callback function on every element in the array being mapped. Unlike .forEach, .map returns the updated array.',
+                syntax: `const newArray = array.map(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
+
+                }, thisContext)`,
+    // TODO: add another example that shows index, array, this
+                code: `
+    const numbers = [1, 4, 9];
+    const squareRoot = number => Math.sqrt(number)
+    const roots = numbers.map(squareRoot);
+    console.log(roots) // [1, 2, 3]
+                `
+            },
+            {
+                name: 'other loops with built-in JavaScript array methods',
+                // TODO: add link to array methods section and/or MDN
+                description: 'Similar to .forEach and .map, JavaScript has other built-in, functional array methods that loop over arrays and perform a specific task. See this section and MDN for more info.'
             },
         ]
     },
@@ -1648,141 +1782,6 @@ const data = [
             },
         ]
     },
-
-    ////////////
-    {
-        id: 'loops',
-        name: 'JavaScript Loops',
-        type: '',
-        data: [
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
-                name: 'for',
-                description: 'Gives you control over how the loop starts, runs, and ends. Most commonly used to loop over arrays and strings.',
-                syntax: `for ([initializer], [condition to evaluate], [post-loop expression]) { 
-                    [statement]
-                }`,
-                code: `
-    // common form used to iterate through each value in an array or another iterable from start to end
-    for (let i = 0; i < iterable.length; i++) { ... }
-
-    // loop from end of iterable to start
-    for (let i = iterable.length - 1; i > -1; i--) { ... }        
-
-    // loop over every other item of a iterable starting from the third item
-    for (let i = 2; i < iterable.length; i += 2) { ... }
-                
-    // loops can be nested
-    for (let i = 0; i < iterableOne.length; i++) {
-        for (let j = 0; j < iterableTwo.length; j++) {
-            ...
-        }
-     }
-            `
-            },
-            {
-                name: 'for-of',
-                description: 'Creates a loop iterating over iterable objects such as String, Array, array-like objects (e.g. HTMLCollection, NodeList), Map, Set, and user-defined iterables. Does not loop over normal JavaScript objects (see For-in loop, Object.keys, Object.values, Object.entries).',
-                syntax: 'for ([variable] of [iterable]) {}',
-                code: `
-    const technologies = ['JS', 'HTML', 'CSS'];
-    for (const val of technologies) {
-        console.log(value); // logs 'JS', 'HTML', 'CSS'
-    }
-
-    // If you'll be reassigning/operating on the values you're looping over you can declare the variable with let instead of const
-    const numbers = [10, 20, 30];
-    for (let val of numbers) {
-        value += 1;
-        console.log(value); // logs 11, 21, 31
-    }
-            `
-            },
-            {
-                name: 'for-in',
-                description: 'Iterates over all enumerable properties of an object, including inherited properties/methods from the prototype chain (see 2nd example below). Most object properties that you\'ll create will be enumerable, but it\'s possible to set properties to be non-enumerable so that they don\'t show up in for-in loops.',
-                syntax: 'for ([variable] in [iterable]) {}',
-                code: `
-    const myObject = { a: 1, b: 2, c: 3 };
-    for (const property in myObject) {"
-        console.log(\`\${property}: \${myObject[property]}\`); // logs "a: 1", "b: 2", "c: 3"
-    }
-
-    // Example showing that enumerable, prototype properties are iterated 
-    function Person(first, last) {
-        this.firstName = first;
-        this.lastName = last;
-    }
-    Person.prototype.sayHello = function() {
-        return \`Hello! My name is \${this.firstName} \${this.lastName}!\`;
-    } 
-    const jason = new Person('jason', 'roundtree')
-    for (const property in jason) {
-        console.log(property); // logs 'jason', 'roundtree', 'sayHello'
-    }
-    // NOTE: prototype methods on ES6 classes are not enumerable and will not show up in for-in loops
-                `
-            },
-            {
-                name: 'while',
-                description: '',
-                syntax: 'while ([condition]) { [statement] }',
-                code: `
-    let i = 0;
-    while (i < 3) {
-        console.log(i); // logs 0, 1, 2
-        i++;
-    }
-                `
-            },
-            {
-                name: 'do-while',
-                description: 'Similar to a while loop, but executes the statement at least once, even if the condition starts out as false.',
-                syntax: 'do { [statement] } while ([condition])',
-                code: `
-    let i = 0;
-    do {
-        console.log(i) // logs 0, 1, 2
-        i++;
-    } while (i < 3 && i !== 0);
-                `
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-                name: 'forEach',
-                description: 'Executes the provided function callback once for each array elemen in ascending order. Always returns "undefined".',
-                syntax: `array.forEach(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
-
-                }, thisContext)`,
-                code: `
-    const array = ['a', 'b', 'c'];
-    array.forEach(item => {
-        console.log(item); // logs 'a', 'b', 'c'
-    });            
-
-                `
-            },
-            {
-                name: 'map',
-                description: 'Creates a new array populated with the results of calling a provided callback function on every element in the array being mapped. Unlike .forEach, .map returns the updated array.',
-                syntax: `const newArray = array.map(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
-
-                }, thisContext)`,
-    // TODO: add another example that shows index, array, this
-                code: `
-    const numbers = [1, 4, 9];
-    const squareRoot = number => Math.sqrt(number)
-    const roots = numbers.map(squareRoot);
-    console.log(roots) // [1, 2, 3]
-                `
-            },
-            {
-                name: 'other loops with built-in JavaScript array methods',
-                // TODO: add link to array methods section and/or MDN
-                description: 'Similar to .forEach and .map, JavaScript has other built-in, functional array methods that loop over arrays and perform a specific task. See this section and MDN for more info.'
-            },
-        ]
-    },
     ////////////
     {
         id: 'dom_events',
@@ -1804,7 +1803,7 @@ const data = [
     ////////////
     {
         id: 'control_statements',
-        name: 'Control Statements ',
+        name: 'JavaScript Control Statements ',
         type: '',
         // data: [
         // ]
@@ -1812,16 +1811,16 @@ const data = [
     ////////////
     {
         id: 'scope',
-        name: 'Scope & Closures',
+        name: 'JavaScript Scope & Closures',
         type: '',
         // data: [
         // ]
     },
     ////////////
-    {
-        id: 'data_types',
-        name: 'Data Types',
-        type: '',
+    // {
+    //     id: 'data_types',
+    //     name: 'JavaScript Data Types',
+    //     type: '',
         // data: [
         //     {
         //         name: 'Primitive Values',
@@ -1886,17 +1885,17 @@ const data = [
         //         ]
         //     }
         // ]
-    },
+    // },
     ////////////
-    {
-        id: 'operators',
-        name: 'Operators',
-        type: '',
-        // data: [
-        //     {
-        //     },
-        // ]
-    },
+    // {
+    //     id: 'operators',
+    //     name: 'Operators',
+    //     type: '',
+    //     data: [
+    //         {
+    //         },
+    //     ]
+    // },
     ////////////
     // {
     //     id: 'variables',

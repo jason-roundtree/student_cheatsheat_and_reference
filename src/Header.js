@@ -10,10 +10,15 @@ export default function Header() {
                 {/* TODO: change this to loop over data so you don't have to keep manually updating */}
                 <ul>
                     {data.map(section => {
+                        const incompleteSection = section.type === ''
                         return (
                             <li>
-                                <a href={`#${section.id}`}>
+                                <a 
+                                    href={`#${section.id}`}
+                                    className={incompleteSection ? 'incomplete_section' : ''}
+                                >
                                     {section.name}
+                                    
                                 </a>
                             </li>
                         )
