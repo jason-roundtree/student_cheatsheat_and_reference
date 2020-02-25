@@ -1,8 +1,8 @@
 {
-  "name": "student_cheetsheet",
+  "name": "student_cheatsheet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://roundem.github.io/student_cheetsheat_and_reference",
+  "homepage": "http://roundem.github.io/student_cheatsheat_and_reference",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
