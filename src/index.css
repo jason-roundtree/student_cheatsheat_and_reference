@@ -4,13 +4,12 @@
   box-sizing: border-box;
   font-family: 'Nanum Gothic', sans-serif;
 }
-
+/* body {
+  background-color: rgb(24, 24, 26);
+} */
 main, nav {
   padding: 20px 40px;
 }
-/* main { 
-  background-color: rgb(83, 83, 250);
-} */
 
 h1 {
   background-color: rgb(72, 72, 72);
@@ -34,12 +33,15 @@ h1, section {
   margin-bottom: 30px;
 }
 
-/* table {
-  width: 100%;
-} */
+.table_container {
+  overflow-x: auto;
+}
 
+table {
+  width: 100%;
+}
 table, th, td {
-  font-size: .8em;
+  /* font-size: .85em; */
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
@@ -53,6 +55,10 @@ th {
 td {
   height: 35px;
   padding: 5px 10px;
+}
+
+tr th:first-child, tr td:first-child {
+  width: 20%;
 }
 
 kbd {
@@ -87,12 +93,12 @@ kbd {
 }
 .description_container p {
   background-color: white;
-  font-size: .85em;
+  /* font-size: .85em; */
 }
 
 .description_container ul {
   background-color: rgb(235, 232, 232);
-  font-size: .8em;
+  /* font-size: .8em; */
 }
 
 .description_container li::before {
