@@ -1,26 +1,37 @@
 import React from 'react'
-import Header from './Header'
-import TopicSection from './TopicSection'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import About from './About'
+import TableOfContents from './TableOfContents'
+import Main from './Main'
 import data from './data'
-// import './App.css'
 
 function App() {
   return (
-    <div className="">
-      <Header />
+    <Router>
+      <h1>
+        <Link to="/">Web Dev Cheatsheet & Reference</Link>
+      </h1>
+      <Switch>
 
-      <main>
-        {data.map(section => {
-          return (
-            <TopicSection 
-              section={section}
-              key={section.id}
-            />
-          )
-        })}
-      </main>
-      
-    </div>
+        <Route path="/about">
+          <About />
+        </Route>
+
+        <Route path="/">
+            <h2>
+              <Link to="/about">About</Link>
+            </h2>
+          <TableOfContents data={data} />
+          <Main />
+        </Route>
+
+      </Switch>
+    </Router>
   );
 }
 

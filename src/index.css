@@ -7,7 +7,7 @@
 /* body {
   background-color: rgb(24, 24, 26);
 } */
-main, nav {
+main, nav, header > p, #about {
   padding: 20px 40px;
 }
 
@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-  padding: 0 40px;
+  padding: 20px 40px 0;
 }
 
 h3 {
@@ -111,7 +111,7 @@ kbd {
 
 .description_container p, 
 .description_container ul {
-  padding: 5px;
+  padding: 10px;
 }
 .description_container p {
   font-family: 'Barlow', sans-serif;

@@ -423,7 +423,7 @@ const data = [
             },
             {
                 name: 'ESLint',
-                description: 'This extension is a popular open source JavaScript linting utility. Code linting is a type of static analysis that is frequently used to find problematic code or code that doesn\'t adhere to certain style guidelines.',
+                description: 'ESLint is a popular open source JavaScript linting utility. Code linting is a type of static analysis that is frequently used to find problematic code or code that doesn\'t adhere to certain style guidelines.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -437,7 +437,7 @@ const data = [
             },
             {
                 name: 'Prettier',
-                description: 'This extension is an opinionated code formatter that saves you time and energy by automatically removing original user code styling and ensuring that outputted code conforms to a consistent style.',
+                description: 'Prettier is an opinionated code formatter that saves you time and energy by automatically removing original user code styling and ensuring that outputted code conforms to a consistent style.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -465,7 +465,7 @@ const data = [
             },
             {
                 name: 'Live Server',
-                description: 'This extension can launch a local development server with a live reload feature so that when you save your project any changes you\'ve made will be reflected in the browser without you having to manually refresh it.',
+                description: 'Live Server can launch a local development server with a live reload feature so that when you save your project any changes you\'ve made will be reflected in the browser without you having to manually refresh it.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -479,7 +479,7 @@ const data = [
             },
             {
                 name: 'Colorizer',
-                description: 'This extension is great for situations when you\'re using abstract values for CSS colors instead the actual name of the color. For instance, instead of using color names it\'s common to use values in units such as RGB, HEX, HSL, etc, but unless you\'re a CSS color guru it\'s not going to be immediately clear what colors these values correspond to. Colorizer helps you instantly visualize what colors these values corresponding by highlighting the value background in your code.',
+                description: 'Colorizer is great for situations when you\'re using abstract values for CSS colors instead the actual name of the color. For instance, instead of using color names it\'s common to use values in units such as RGB, HEX, HSL, etc, but unless you\'re a CSS color guru it\'s not going to be immediately clear what colors these values correspond to. Colorizer helps you instantly visualize what colors these values corresponding by highlighting the value background in your code.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -493,7 +493,7 @@ const data = [
             },
             {
                 name: 'Bracket Pair Colorizer',
-                description: 'This extension allows matching brackets to be identified with colors so it\'s easier to recognize where code blocks start and end, which allows you to more easily manage your code and identify mismatched brackets and out-of-place code.',
+                description: 'Bracket Pair Colorizer allows matching brackets to be identified with colors so it\'s easier to recognize where code blocks start and end, which allows you to more easily manage your code and identify mismatched brackets and out-of-place code.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -507,7 +507,7 @@ const data = [
             },
             {
                 name: 'CSS Peek',
-                description: 'This extension allows you to view and make edits to your CSS without having to actually open your CSS files and find the corresponding rule.',
+                description: 'CSS Peek allows you to view and make edits to your CSS without having to actually open your CSS files and find the corresponding rule.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -993,7 +993,7 @@ const data = [
         data: [
             {
                 name: 'concat',
-                description: 'Merges two or more arrays. This method does not change the existing arrays, but instead returns a new array.',
+                description: 'Merges two or more arrays. This method does not change the existing array, but instead returns a new array.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
