@@ -7,8 +7,18 @@
 /* body {
   background-color: rgb(24, 24, 26);
 } */
-main, nav, header > p, #about {
+main, header > p, #about {
   padding: 20px 40px;
+}
+nav {
+  padding: 5px 40px 40px;
+}
+a {
+  text-decoration: none;
+}
+
+h1 a:visited {
+  color: white;
 }
 
 h1 {
@@ -34,10 +44,6 @@ h3 {
 
 li {
   list-style: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 h1, section {
