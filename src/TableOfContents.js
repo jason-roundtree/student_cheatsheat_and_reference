@@ -1,4 +1,5 @@
 import React from 'react'
+import { HashLink as Link } from 'react-router-hash-link'
 
 export default function TableOfContents(props) {
     return (
@@ -10,13 +11,16 @@ export default function TableOfContents(props) {
                         const incompleteSection = section.type === ''
                         return (
                             <li key={section.id}>
-                                <a 
-                                    href={`#${section.id}`}
-                                    className={incompleteSection ? 'incomplete_section' : ''}
+                                <Link 
+                                    to={`#${section.id}`}
+                                    className={incompleteSection 
+                                        ? 'incomplete_section' 
+                                        : ''
+                                    }
                                 >
                                     {section.name}
                                     
-                                </a>
+                                </Link>
                             </li>
                         )
                     })}

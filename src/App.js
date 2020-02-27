@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  HashRouter,
   BrowserRouter as Router,
   Switch,
   Route,
@@ -12,26 +13,28 @@ import data from './data'
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename="/">
       <h1>
         <Link to="/">Web Dev Cheatsheet & Reference</Link>
       </h1>
-      <Switch>
 
+      <Switch>
         <Route path="/about">
           <About />
         </Route>
 
         <Route path="/">
-            <h2>
-              <Link to="/about">About</Link>
-            </h2>
-          <TableOfContents data={data} />
+          <h2>
+            <Link to="/about">About</Link>
+          </h2>
+          <TableOfContents 
+            data={data} 
+          />
           <Main />
         </Route>
-
       </Switch>
-    </Router>
+
+    </HashRouter>
   );
 }
 

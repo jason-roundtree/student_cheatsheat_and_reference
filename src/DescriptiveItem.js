@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Prism from 'prismjs'
 
 export default function DescriptiveItem(props) {
+    useEffect(() => {
+        Prism.highlightAll()
+    })
     return (
         <div>
             {props.section.data && (
                 props.section.data.map(secData => {
-                    console.log('secData: ', secData)
+                    // console.log('secData: ', secData)
                     return (
                         <div 
                             className="description_container"
@@ -18,13 +22,12 @@ export default function DescriptiveItem(props) {
                             )}
 
                             {secData.code && (
-                                <pre >
+                                <pre>
                                     <code className="language-js">
                                         {secData.code}
                                     </code>
                                 </pre>      
                             )}
-                            
 
                             {secData.external_links && (
                                 <ul>
