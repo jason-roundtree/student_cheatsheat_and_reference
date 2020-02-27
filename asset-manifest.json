@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/student_cheatsheat_and_reference/static/css/main.53b36683.chunk.css",
+    "main.css": "/student_cheatsheat_and_reference/static/css/main.d73720b3.chunk.css",
     "main.js": "/student_cheatsheat_and_reference/static/js/main.a81f96a3.chunk.js",
     "main.js.map": "/student_cheatsheat_and_reference/static/js/main.a81f96a3.chunk.js.map",
     "runtime-main.js": "/student_cheatsheat_and_reference/static/js/runtime-main.ab136fef.js",
@@ -8,15 +8,15 @@
     "static/js/2.be8be6c8.chunk.js": "/student_cheatsheat_and_reference/static/js/2.be8be6c8.chunk.js",
     "static/js/2.be8be6c8.chunk.js.map": "/student_cheatsheat_and_reference/static/js/2.be8be6c8.chunk.js.map",
     "index.html": "/student_cheatsheat_and_reference/index.html",
-    "precache-manifest.0925763c3da94b2372da05abeeda2816.js": "/student_cheatsheat_and_reference/precache-manifest.0925763c3da94b2372da05abeeda2816.js",
+    "precache-manifest.54471b8ceb1d2fac2192f295ed0334b8.js": "/student_cheatsheat_and_reference/precache-manifest.54471b8ceb1d2fac2192f295ed0334b8.js",
     "service-worker.js": "/student_cheatsheat_and_reference/service-worker.js",
-    "static/css/main.53b36683.chunk.css.map": "/student_cheatsheat_and_reference/static/css/main.53b36683.chunk.css.map",
+    "static/css/main.d73720b3.chunk.css.map": "/student_cheatsheat_and_reference/static/css/main.d73720b3.chunk.css.map",
     "static/js/2.be8be6c8.chunk.js.LICENSE": "/student_cheatsheat_and_reference/static/js/2.be8be6c8.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.ab136fef.js",
     "static/js/2.be8be6c8.chunk.js",
-    "static/css/main.53b36683.chunk.css",
+    "static/css/main.d73720b3.chunk.css",
     "static/js/main.a81f96a3.chunk.js"
   ]
 }
