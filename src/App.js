@@ -9,14 +9,19 @@ import {
 import About from './About'
 import TableOfContents from './TableOfContents'
 import Main from './Main'
+import Footer from './Footer'
 import data from './data'
 
 function App() {
   return (
     <HashRouter basename="/">
-      <h1>
-        <Link to="/">Web Dev Cheatsheet & Reference</Link>
-      </h1>
+      <header>
+        <h1>
+          Web Dev Cheatsheet & Reference
+        </h1>
+        <Link to="/about">About</Link>
+      </header>
+      
 
       <Switch>
         <Route path="/about">
@@ -24,9 +29,6 @@ function App() {
         </Route>
 
         <Route path="/">
-          <h2>
-            <Link to="/about">About</Link>
-          </h2>
           <TableOfContents 
             data={data} 
           />
@@ -34,6 +36,7 @@ function App() {
         </Route>
       </Switch>
 
+      <Footer />
     </HashRouter>
   );
 }

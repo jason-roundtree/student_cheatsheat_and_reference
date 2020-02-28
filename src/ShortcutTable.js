@@ -4,13 +4,15 @@ export default function ShortcutTable(props) {
     return (
         <div className="table_container">
             <table>
-                <tbody>
+                <thead>
                     <tr>
                         <th>Shortcut</th>
                         <th>Mac</th>
                         <th>Windows</th>
                     </tr>
-                    
+                </thead>
+
+                <tbody>
                     {props.section.data.map(secData => {
                         return (
                             <tr key={secData.name}>

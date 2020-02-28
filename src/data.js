@@ -533,7 +533,7 @@ const data = [
     },
     ////////////
     {
-        // TODO: add examples and options fields?
+        // TODO: add examples and options fields
         id: 'command_line',
         name: 'Command Line Interface',
         type: 'descriptiveWithCode',
@@ -583,8 +583,36 @@ const data = [
                 description: 'Displays a list of the currently running processes (e.g. instance of a computer program that is currently running) and information associated with those processes like Process ID (PID), which can be helpful when you\'d like to force-close unresponsive programs, particularly command line programs with no GUI.',
             },
             {
-                name: 'clear',
+                name: 'clear or Ctrl + L',
                 description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up with the arrow key.',
+            },
+            {
+                name: 'Up & Down Arrows',
+                description: 'Cycle through previously executed commands.',
+            },
+            {
+                name: 'Ctrl + C',
+                description: 'Abort running command.',
+            },
+            {
+                name: 'Ctrl + A or ',
+                description: 'Moves the cursor to the start of the line.',
+            },
+            {
+                name: 'Ctrl + E',
+                description: 'Moves the cursor to the end of the line.',
+            },
+            {
+                name: 'Alt/Option + ←/→',
+                description: 'Moves the cursor to the start/end of the previous/next word',
+            },
+            {
+                name: 'Ctrl + U',
+                description: 'Deletes all characters before the cursor.',
+            },
+            {
+                name: 'Ctrl + K',
+                description: 'Deletes all characters after the cursor.',
             },
         ]
     },
@@ -1759,7 +1787,7 @@ const data = [
             {
                 // https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
                 name: 'tagName',
-                description: 'Read-only property of the Element interface returns the tag name of the element on which it\'s called. For example, if the element is an <img>, its tagName property is "IMG"',
+                description: 'Read-only property that returns the tag name of the element on which it\'s called. For example, if the element is an <img>, its tagName property is "IMG"',
                 code: ''
             },
             {
