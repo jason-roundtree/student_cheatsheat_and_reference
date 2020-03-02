@@ -9,6 +9,10 @@ export default function TopicSection(props) {
             <h3 className={incompleteSection ? 'incomplete_section' : ''}>
                 {props.section.name}
             </h3>
+
+            {props.section.sectionDescription && (
+                <p class="section_description">{props.section.sectionDescription}</p>    
+            )}
             {props.section.type === 'shortcut_table' 
                 ? (
                     <ShortcutTable 

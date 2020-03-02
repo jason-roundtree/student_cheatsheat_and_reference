@@ -203,7 +203,7 @@ const data = [
             },
             {
                 name: 'Go to Line',
-                mac: 'Ctrl + G',
+                mac: 'Control + G',
                 windows: 'Ctrl + G'
             },
             {
@@ -246,7 +246,7 @@ const data = [
             },
             {
                 name: 'Expand/Shrink Current Selection',
-                mac: 'Ctrl + Shift + Command + ←/→',
+                mac: 'Control + Shift + Command + ←/→',
                 windows: 'Ctrl + Shift + Command + ←/→'
             },
             {
@@ -317,32 +317,32 @@ const data = [
                 ]
             },
             {
-                name: 'Delete by Word',
+                name: 'Delete by Word to the Left of theq Cursor',
                 mac: 'Option + Delete',
-                windows: '?????'
+                windows: 'Ctrl + Backspace'
             },
             {
-                name: 'Forward Delete (characters in front of the cursor)',
-                mac: 'Ctrl + D',
-                windows: '?????',
+                name: 'Delete All Characters on Line to the Left of the Cursor',
+                mac: 'Command + Delete',
+                windows: ''
+            },
+            {
+                name: 'Forward Delete by Character (characters to the right of the cursor)',
+                mac: 'Control + D',
+                windows: '',
                 notes: [
                     'The Delete key on most Mac keyboards will delete from right to left in the same way as the Backspace key does on other keyboards. Many non-Mac keyboards have a Delete or DEL key that permorm "Forward Delete" and deletes text in the opposite way as Mac Delete, so this shortcut allows users without the non-Mac Delete key to achieve Forward Delete.'
                 ]
             },
             {
-                name: 'Forward Delete by Word',
+                name: 'Forward Delete by Word in Front of Cursor',
                 mac: 'Fn + Option + Delete',
-                windows: '?????'
+                windows: 'Fn + Alt + Backspace'
             },
             {
-                name: 'Delete Word Behind Cursor',
-                mac: 'Option + Delete',
-                windows: '?????'
-            },
-            {
-                name: 'Delete Line Behind Cursor',
-                mac: 'Command + Delete',
-                windows: '?????'
+                name: 'Forward Delete All Characters on Line After the Cursor',
+                mac: 'Control + K',
+                windows: 'Ctrl + K'
             },
             {
                 name: 'Toggle Terminal',
@@ -353,7 +353,7 @@ const data = [
             {
                 name: 'Traverse Through Open Files/Tabs',
                 mac: 'Option + Command + ←/→',
-                windows: '??????'
+                windows: ''
             },
             {
                 name: 'Find & Replace in Current File',
@@ -520,6 +520,48 @@ const data = [
                 ]
             },
             {
+                name: 'Bookmarks',
+                description: 'Helps you to navigate in your code, moving between important positions easily and quickly.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/alefragnani/vscode-bookmarks'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks'
+                    }
+                ]
+            },
+            {
+                name: 'TODO Highlight',
+                description: 'A common convention for setting reminders in a codebase is to leave comments prefixed with "TODO:" or "FIXME:". This extension will highlight these comments to make them easier to identify and distinguish from normal code comments.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/wayou/vscode-todo-highlight'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight'
+                    }
+                ]
+            },
+            {
+                name: 'Better Comments',
+                description: 'Helps you create more human-friendly comments in your code. Allows you to categorize and style your comments differently according to the category (e.g. TODOs, questions, important alerts, etc.).',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://github.com/aaron-bond/better-comments'
+                    },
+                    { 
+                        linkDescription: 'VSCode Marketplace',
+                        href: 'https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments'
+                    }
+                ]
+            },
+            {
                 name: 'VS Code Intellisense',
                 description: 'VS Code IntelliSense provides intelligent code completions based on language semantics and an analysis of your source code. If a language service knows possible completions, the IntelliSense suggestions will pop up as you type. If you continue typing characters, the list of members (variables, methods, etc.) is filtered to only include members containing your typed characters. VS Code IntelliSense is provided for JavaScript, TypeScript, JSON, HTML, CSS, SCSS, and Less out of the box. VS Code supports word based completions for any programming language but can also be configured to have richer IntelliSense by installing a language extension. When using Intellisense, pressing Tab or Enter will insert the selected member. You can trigger IntelliSense in any editor window by typing Command + Space.',
                 external_links: [
@@ -529,14 +571,25 @@ const data = [
                     }
                 ]
             },
+            {
+                name: 'Themes & Icons',
+                description: 'There are many ways to customize your code editor with different preset color and icon themes, or you can create your own.',
+                external_links: [
+                    {
+                        linkDescription: 'Documentation',
+                        href: 'https://code.visualstudio.com/docs/getstarted/themes'
+                    }
+                ]
+            },
         ]
     },
     ////////////
     {
         // TODO: add examples and options fields
-        id: 'command_line',
+        id: 'cli',
         name: 'Command Line Interface',
         type: 'descriptiveWithCode',
+        sectionDescription: 'This is a list of some of the more commonly used commands but I haven\'t included examples or any of the available options/arguments/flags that you can add to tweak the settings that control the details of how the commands work.',
         data: [
             {
                 name: 'cd',
@@ -583,7 +636,7 @@ const data = [
                 description: 'Displays a list of the currently running processes (e.g. instance of a computer program that is currently running) and information associated with those processes like Process ID (PID), which can be helpful when you\'d like to force-close unresponsive programs, particularly command line programs with no GUI.',
             },
             {
-                name: 'clear or Ctrl + L',
+                name: 'clear (or Control + L)',
                 description: 'Clears the command line window of previous commands and responses. The history is typically still preserved and can be viewed by scrolling up with the arrow key.',
             },
             {
@@ -591,15 +644,15 @@ const data = [
                 description: 'Cycle through previously executed commands.',
             },
             {
-                name: 'Ctrl + C',
+                name: 'Control + C',
                 description: 'Abort running command.',
             },
             {
-                name: 'Ctrl + A or ',
+                name: 'Control + A',
                 description: 'Moves the cursor to the start of the line.',
             },
             {
-                name: 'Ctrl + E',
+                name: 'Control + E',
                 description: 'Moves the cursor to the end of the line.',
             },
             {
@@ -607,99 +660,21 @@ const data = [
                 description: 'Moves the cursor to the start/end of the previous/next word',
             },
             {
-                name: 'Ctrl + U',
+                name: 'Control + U',
                 description: 'Deletes all characters before the cursor.',
             },
             {
-                name: 'Ctrl + K',
+                name: 'Control + K',
                 description: 'Deletes all characters after the cursor.',
             },
         ]
     },
-    ////////////
+    
     {
         id: 'git_commands',
         name: 'Git Commands',
         type: 'descriptiveWithCode',
-        sectionDescription: '',
-        definitions: [
-            {
-                name: 'Local Repository',
-                definition: 'Your local copy of a project repository that you can independently make changes to.'
-            },
-            {
-                name: 'Remote Repository',
-                definition: 'Remote repositories are versions of your project that are hosted on the Internet or network somewhere, as opposed to your local working copy. Typically everybody involved on a project works from (git pull) and saves to (git push) a remote repository.'
-            },
-            {
-                name: 'Working Directory / Working Tree',
-                definition: 'The checked-out state of a project\'s files and folders on your local machine. You must tell Git to track changes to files by running a git add command. You can view the status of the Working Directory by running the command git status.'
-            },
-            {
-                name: 'Staging Area / Index',
-                definition: 'A local cache where changes to your Git-tracked files are stored before they can be committed. Changes are recorded to the staging area with the git add command.'
-            },            
-            {
-                name: 'Commit',
-                definition: 'A snapshot of a project at a particular point in time. One of the reasons Git is so powerful is because it allows you to easily preserve, view and edit a project\'s history of changes.'
-            },    
-            {
-                // https://www.git-tower.com/learn/git/glossary/origin
-                name: 'Origin',
-                definition: 'An alias used i remote repository url. Typically it refers to the central repository that you are pushing and pulling from. It is most commonly named "origin" because that\'s what Git names it by default when you clone a remote repo for the first time, but you can also rename it.'
-            },        
-            {
-                name: 'Master',
-                definition: 'The default development branch. Whenever you create a git repository, Git creates a branch called "master" and checks it out for you.'
-            },
-            {
-                name: 'HEAD',
-                definition: 'A reference to the last commit in the currently checked-out branch.'
-            },
-            {
-                name: 'Detached HEAD',
-                definition: 'When a specific commit is checked out instead of a branch. When you make changes and commit them in this state, these changes do NOT belong to any branch.'
-            },
-            {
-                name: 'Branch',
-                definition: 'Branches represent independent lines of development, each with it\'s own working directory, staging area and project history.'
-            },
-            {
-                // https://help.github.com/en/github/getting-started-with-github/fork-a-repo
-                // https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
-                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
-                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
-                name: 'Fork',
-                definition: 'A fork is a copy of a repository and it\'s most often used when contributing to open source software. When you fork a repository it gives you your own remote copy, which you can then clone and work on locally before pushing changes back to your remote forked copy without affecting the original project. Once you\'ve pushed your changes to your remote copy you can submit a pull request to the original project maintainer. Note that forking is similar to cloning a repository but has important differences (see links above).'
-            },
-            {
-                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
-                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
-                name: 'Clone',
-                definition: 'A local copy of a remote repository. You often clone a repository when you want to contribute to an group/organizational project. Note that cloning is similar to forking a repository but has important differences (see links above).'
-            },
-            {
-                // https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
-                name: 'Pull Request',
-                definition: 'Pull requests let you tell others about changes you\'ve pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.'
-            },
-            {
-                name: 'Untracked Files',
-                definition: 'Any files in your working directory that Git is aware of but have not been commited or staged for commit.'
-            },
-            {
-                name: 'Merge',
-                definition: 'A merge occurs when you combine multiple sequences of Git histories. Most frequently used to combine two branches or combining remote changes into your local repository.'
-            }
-            // {
-            //     name: 'Upstream Branch',
-            //     definition: ''
-            // },
-            // {
-            //     name: 'Fast-Forward',
-            //     definition: ''
-            // },
-        ],
+        sectionDescription: 'This is a list of some of the more commonly used commands and definitions but I haven\'t included examples or any of the available options/arguments/flags that you can add to tweak the settings that control the details of how the commands work.',
         external_links: [
             {
                 linkDescription: 'Git Documentation',
@@ -718,7 +693,7 @@ const data = [
         data: [
             {
                 name: 'git init',
-                description: 'Creates an empty Git repository locally.',
+                description: 'Creates an empty, local Git repository.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -775,7 +750,7 @@ const data = [
                         href: 'https://www.atlassian.com/git/tutorials/syncing/git-fetch'
                     },
                     { 
-                        linkDescription: 'Git Fetch vs. Git Pull',
+                        linkDescription: 'Git Fetch vs. Git Pull - StackOverflow',
                         href: 'https://stackoverflow.com/a/292359/8674094'
                     }
                 ]
@@ -881,7 +856,7 @@ const data = [
                         href: 'https://www.atlassian.com/git/tutorials/setting-up-a-repository/git-clone'
                     },
                     { 
-                        linkDescription: 'Git Fetch vs. Git Pull',
+                        linkDescription: 'Git Fetch vs. Git Pull - StackOverflow',
                         href: 'https://stackoverflow.com/a/292359/8674094'
                     }
                 ]
@@ -1007,9 +982,93 @@ const data = [
             },
         ]
     },
+    ////////////
+    {
+        id: 'git_definitions',
+        name: 'Git/Github Definitions & Workflow',
+        type: 'descriptive',
+        data: [
+            {
+                name: 'Local Repository',
+                description: 'Your local copy of a project repository that you can independently make changes to.'
+            },
+            {
+                name: 'Remote Repository',
+                description: 'Remote repositories are versions of your project that are hosted on the Internet or network somewhere, as opposed to your local working copy. Typically everybody involved on a project works from (git pull) and saves to (git push) a remote repository.'
+            },
+            {
+                name: 'Working Directory / Working Tree',
+                description: 'The checked-out state of a project\'s files and folders on your local machine. You must tell Git to track changes to files by running a git add command. You can view the status of the Working Directory by running the command git status.'
+            },
+            {
+                name: 'Staging Area / Index',
+                description: 'A local cache where changes to your Git-tracked files are stored before they can be committed. Changes are recorded to the staging area with the git add command.'
+            },            
+            {
+                name: 'Commit',
+                description: 'A snapshot of a project at a particular point in time. One of the reasons Git is so powerful is because it allows you to easily preserve, view and edit a project\'s history of changes.'
+            },    
+            {
+                // https://www.git-tower.com/learn/git/glossary/origin
+                name: 'Origin',
+                description: 'An alias used for a remote repository\'s url. Typically it refers to the central repository that you are pushing and pulling from. It is most commonly named "origin" because that\'s what Git names it by default when you clone a remote repo for the first time, but you can also rename it.'
+            },        
+            {
+                name: 'Master',
+                description: 'The default development branch. Whenever you create a git repository, Git creates a branch called "master" and checks it out for you.'
+            },
+            {
+                name: 'HEAD',
+                description: 'A reference to the last commit in the currently checked-out branch.'
+            },
+            {
+                name: 'Detached HEAD',
+                description: 'When a specific commit is checked out instead of a branch. When you make changes and commit them in this state, these changes do NOT belong to any branch.'
+            },
+            {
+                name: 'Branch',
+                description: 'Branches represent independent lines of development, each with it\'s own working directory, staging area and project history.'
+            },
+            {
+                // https://help.github.com/en/github/getting-started-with-github/fork-a-repo
+                // https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow
+                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
+                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
+                name: 'Fork',
+                description: 'A fork is a copy of a repository and it\'s most often used when contributing to open source software. When you fork a repository it gives you your own remote copy, which you can then clone and work on locally before pushing changes back to your remote forked copy without affecting the original project. Once you\'ve pushed your changes to your remote copy you can submit a pull request to the original project maintainer. Note that forking is similar to cloning a repository but has important differences (see links above).'
+            },
+            {
+                // http://bryanpendleton.blogspot.com/2014/07/git-clone-vs-fork.html
+                // https://stackoverflow.com/questions/9257533/what-is-the-difference-between-origin-and-upstream-on-github/9257901#9257901
+                name: 'Clone',
+                description: 'A local copy of a remote repository. You often clone a repository when you want to contribute to an group/organizational project. Note that cloning is similar to forking a repository but has important differences (see links above).'
+            },
+            {
+                // https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests
+                name: 'Pull Request',
+                description: 'Pull requests let you tell others about changes you\'ve pushed to a branch in a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before your changes are merged into the base branch.'
+            },
+            {
+                name: 'Untracked Files',
+                description: 'Any files in your working directory that Git is aware of but have not been commited or staged for commit.'
+            },
+            {
+                name: 'Merge',
+                description: 'A merge occurs when you combine multiple sequences of Git histories. Most frequently used to combine two branches or combining remote changes into your local repository.'
+            }
+            // {
+            //     name: 'Upstream Branch',
+            //     description: ''
+            // },
+            // {
+            //     name: 'Fast-Forward',
+            //     description: ''
+            // },
+        ]
+    },
     // ////////////
     {
-        id: 'js_array_methods',
+        id: 'array_methods',
         name: 'JavaScript Array Methods',
         type: 'descriptiveWithCode',
         external_links: [
@@ -1072,7 +1131,7 @@ const data = [
             },
             {
                 name: 'forEach',
-                description: 'Executes a provided function once for each array element. Returns `undefined`.',
+                description: 'Executes a function once for each array element. Returns `undefined`.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
@@ -1254,7 +1313,7 @@ const data = [
     },
     ////////////
     {
-        id: 'javascript_functions',
+        id: 'functions',
         name: 'JavaScript Functions ',
         type: 'descriptiveWithCode',
         external_links: [
@@ -1421,6 +1480,7 @@ const data = [
     },
     ////////////
     {
+        // TODO: add Object.keys(o), Object.getOwnPropertyNames(o), Object.values()
         id: 'loops',
         name: 'JavaScript Loops',
         type: 'descriptiveWithCode',
@@ -1457,14 +1517,15 @@ const data = [
                 code: `
     const technologies = ['JS', 'HTML', 'CSS'];
     for (const val of technologies) {
-        console.log(value); // logs 'JS', 'HTML', 'CSS'
+        console.log(val); // logs 'JS', 'HTML', 'CSS'
     }
 
-    // If you'll be reassigning/operating on the values you're looping over you can declare the variable with let instead of const
+    // If you'll be reassigning/operating on the values 
+    // you're looping over you can declare the variable with let instead of const
     const numbers = [10, 20, 30];
     for (let val of numbers) {
-        value += 1;
-        console.log(value); // logs 11, 21, 31
+        val += 1;
+        console.log(val); // logs 11, 21, 31
     }
             `
             },
@@ -1483,14 +1544,18 @@ const data = [
         this.firstName = first;
         this.lastName = last;
     }
+
     Person.prototype.sayHello = function() {
         return \`Hello! My name is \${this.firstName} \${this.lastName}!\`;
     } 
+
     const jason = new Person('jason', 'roundtree')
+    
     for (const property in jason) {
         console.log(property); // logs 'jason', 'roundtree', 'sayHello'
-        // To check if a property exists on an object and is not inherited you can use the .hasOwnProperty method
     }
+
+    // NOTE: To check if a property exists on an object and is not inherited you can use the .hasOwnProperty method
     // NOTE: prototype methods on ES6 classes are not enumerable and will not show up in for-in loops
                 `
             },
@@ -1521,7 +1586,7 @@ const data = [
             {
                 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
                 name: 'forEach',
-                description: 'Executes the provided function callback once for each array elemen in ascending order. Always returns "undefined".',
+                description: 'Executes a function once for each array element. Returns `undefined`.',
                 syntax: `array.forEach(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
 
                 }, thisContext)`,
@@ -1529,6 +1594,7 @@ const data = [
     const array = ['a', 'b', 'c'];
     array.forEach(item => {
         console.log(item); // logs 'a', 'b', 'c'
+        sendDataToDatabase(item);
     });            
                 `
             },
@@ -1538,7 +1604,7 @@ const data = [
                 syntax: `const newArray = array.map(function callback(currentValue, indexOfCurrentValue, ArrayBeingIterated) {
 
                 }, thisContext)`,
-    // TODO: add another example that shows index, array, this
+    // TODO: add another example that shows index, array, this??
                 code: `
     const numbers = [1, 4, 9];
     const squareRoot = number => Math.sqrt(number)
@@ -1549,7 +1615,131 @@ const data = [
             {
                 name: 'other loops with built-in JavaScript array methods',
                 // TODO: add link to array methods section and/or MDN
-                description: 'Similar to .forEach and .map, JavaScript has other built-in, functional array methods that loop over arrays and perform a specific task. See this section and MDN for more info.'
+                description: 'Similar to .forEach and .map, JavaScript has other built-in, functional methods that loop over arrays and perform a specific task. See this section and MDN for more info.'
+            },
+        ]
+    },
+    ////////////
+    {
+        id: 'conditionals',
+        name: 'JavaScript Conditional Statements & Truthy/Falsy',
+        type: 'descriptionWithCode',
+        data: [
+            {
+                // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+                name: 'falsy values',
+                description: '"Falsy" values are any values or expressions that evaluate to the boolean value of false.',
+                code: `
+    // Examples of falsy values
+    false
+    0
+    -0
+    null
+    undefined
+    NaN
+    // empty strings: 
+    ""
+    ''
+    \`\`
+                `
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+                name: 'truthy values',
+                description: '"Truthy" values are any values or expressions that evaluate to the boolean value of true.',
+                code: `
+    // Examples of truthy values
+    true
+    {}
+    []
+    1
+    -1
+    "I'm a string"
+    "0"
+                `
+            },
+                {
+                name: 'if / else-if / else',
+                description: '',
+                code: `
+    if (x === true) {
+        // do something...
+    } else if (y === true) {
+        // or do something else...
+    } else {
+        // or if none of the above is true, do this...
+    }
+    // NOTE: You can have many different else-if statements but if you find yourself
+    // writing a lot of them you're probably better off using a switch statement.
+    // NOTE: You can nest if-else statements
+
+
+    // instead of writing out "x === true" and "y === true" like in the 
+    // example above, you can shorten it to this:
+    if (x) {
+        // do something...
+    } else if (y) {
+        // or do something else...
+    } ...
+
+
+    // An implicit format of if-else statements can be used in 
+    // functions since when the condition is true the return  
+    // keyword prevents the subsequent code from running
+    if (valueIsTrue) {
+        return doSomething()
+    }
+    doSomethingElse()
+                `
+            },
+            {
+                // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+                name: 'switch',
+                description: '',
+                syntax: ``,
+                code: `
+    switch(expressionToEvalute) {
+        case 'x':
+            // do something...
+            break;
+        case 'z':
+            // or do something else...
+            break;
+        case 'z':
+            // or do something else...
+            break;
+        default:
+            // or if none of the above is true, do this...
+    }
+
+    // NOTE: If a case is true, the break keyword will prevent 
+    // subsequent cases from being checked
+                `
+            },
+            {
+                name: 'ternary statement',
+                description: 'A concise way to write conditional statements.',
+                syntax: ``,
+                code: `
+    conditionToCheck ? doSomethingIfTrue() : doSomethingIfFalse();
+
+    // You can also break the clauses onto new lines if it helps make the code more readable
+    conditionToCheck
+        ? doSomethingIfTrue()
+        : doSomethingIfFalse();
+
+    // NOTE: You can nest and chain ternary statements but it's generally not
+    // recommended because it can make your code difficult to read and understand
+                `
+            },
+            {
+                name: 'short-circuit conditional evaluation',
+                description: 'In JavaScript the "&&" operator "short-circuits", meaning that if the code on the left side of the "&&" operator is false, the code on the right side will not execute, which allows you to concisely write if-then logic.',
+                syntax: ``,
+                code: `
+    // In this example, the doSomething function will only run if the testTruthiness variable evaluates to true
+    conditionToCheck && doSomethingIfTrue();
+                `
             },
         ]
     },
@@ -1560,156 +1750,347 @@ const data = [
         type: 'descriptiveWithCode',
         data: [
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector
                 name: 'querySelector',
                 description: 'Returns the first element that is a descendant of the element on which it is invoked that matches the specified group of selectors.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
                 name: 'querySelectorAll',
                 description: 'Returns a static (not live) NodeList representing a list of elements matching the specified group of selectors which are descendants of the element on which the method was called.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName
                 name: 'getElementsByTagName',
                 description: 'Returns a live HTMLCollection of elements with the given tag name. All descendants of the specified element are searched, but not the element itself. The returned list is live, which means it updates itself with the DOM tree automatically. Therefore, there is no need to call Element.getElementsByTagName() with the same element and arguments repeatedly if the DOM changes in between calls.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
                 name: 'getElementById',
-                description: 'Returns an Element object representing the element whose id property matches the specified string. ',
-                code: ''
+                description: 'Returns the element whose id property matches the specified string.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByClassName
                 name: 'getElementsByClassName',
-                description: 'Returns a live HTMLCollection which contains every descendant element which has the specified class name or names.',
-                code: ''
+                description: 'Returns a live HTMLCollection which contains every descendant element that has the specified class name or names.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByClassName'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild
                 name: 'firstChild',
                 description: 'Read-only property that returns a node\'s first child in the tree, or null if the node has no children.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild
                 name: 'lastChild',
                 description: 'Read-only property that returns the last child of a node. If its parent is an element, then the child is generally an element node, a text node, or a comment node. It returns null if there are no child elements.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes
+                name: 'firstElementChild',
+                description: 'Read-only property returns the object\'s first child element, or null if there are no child elements',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild'
+                    }
+                ]
+            },
+            {
+                name: 'lastElementChild',
+                description: 'Read-only property returns the object\'s last child element or null if there are no child elements.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild'
+                    }
+                ]
+            },
+            {
                 name: 'childNodes',
                 description: 'Read-only property that returns a live NodeList of child nodes of the given element. The first child node is assigned index 0.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children
                 name: 'children',
                 description: 'Read-only property that returns a live HTMLCollection, which contains all of the child elements of the node upon which it was called.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode
                 name: 'parentNode',
                 description: 'Read-only property that returns the parent of the specified node in the DOM tree.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement
                 name: 'parentElement',
                 description: 'Read-only property returns a DOM node\'s parent Element, or null if the node either has no parent, or its parent isn\'t a DOM Element.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling
                 name: 'previousSibling',
                 description: 'Read-only property that returns the node immediately preceding the specified one in its parent\'s childNodes list, or null if the specified node is the first in that list.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling
                 name: 'nextSibling',
                 description: 'Read-only property that returns the node immediately following the specified one in their parent\'s childNodes, or returns null if the specified node is the last child in the parent element.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling'
+                    }
+                ]
             },
             {
                 // TODO: find out what "Will return itself" means
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
                 name: 'closest',
                 description: 'Starting with the target element itself it traverses parents (heading toward the document root) of the element until it finds a node that matches the provided selectorString. Will return itself or the matching ancestor. If no such element exists, it returns null.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/closest'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append
                 name: 'append',
                 description: 'Inserts a set of Node objects or DOMString objects after the last child of the ParentNode',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend
                 name: 'prepend',
                 description: 'Inserts a set of Node objects or DOMString objects before the first child of the ParentNode.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
                 name: 'appendChild',
                 description: 'Adds a node to the end of the list of children of a specified parent node. If the given child is a reference to an existing node in the document, appendChild() moves it from its current position to the new position (there is no requirement to remove the node from its parent node before appending it to some other node)',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove
                 name: 'remove',
                 description: 'Removes the object from the tree it belongs to.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild
                 name: 'removeChild',
                 description: 'Removes a child node from the DOM and returns the removed node.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild
                 name: 'replaceChild',
                 description: 'Replaces a child node within the given (parent) node.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+                name: 'insertAdjacentElement',
+                description: 'Inserts an element node at a given position relative to the element it is invoked upon.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement'
+                    }
+                ]
+            },
+            {
+                name: 'insertAdjacentHTML',
+                description: 'Parses the specified text as HTML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML manipulation.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML'
+                    }
+                ]
+            },
+            {
+                name: 'insertAdjacentText',
+                description: 'Inserts a given text node at a given position relative to the element it is invoked upon.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText'
+                    }
+                ]
+            },
+            {
+                name: 'insertBefore',
+                description: 'Inserts a node before a reference node as a child of a specified parent node. If the given node already exists in the document, insertBefore() moves it from its current position to the new position. (That is, it will automatically be removed from its existing parent before appending it to the specified new parent.)',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore'
+                    }
+                ]
+            },
+            {
                 name: 'innerHTML',
                 description: 'Gets or sets the HTML markup contained within the element.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
                 name: 'textContent',
                 description: 'Gets or sets the text content of the node and its descendants.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent'
+                    }
+                ]
             },
             {
-                // TODO: leave this in? Definitely note differences between textContent and innerHTML
-                // https://www.w3schools.com/jsref/prop_node_innertext.asp
+                // TODO: note differences between textContent and innerHTML
                 name: 'innerText',
                 description: 'Gets or sets the text content of the specified node, and all its descendants. As a getter, it approximates the text the user would get if they highlighted the contents of the element with the cursor and then copied it to the clipboard.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
                 name: 'createElement',
                 description: 'Creates the HTML element specified by tagName.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode
                 name: 'createTextNode',
                 description: 'Creates a new Text node. This method can be used to escape HTML characters.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode'
+                    }
+                ]
             },
             // {
             //     // https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
@@ -1718,16 +2099,26 @@ const data = [
             //     code: ''
             // },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute
                 name: 'setAttribute',
                 description: 'Sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute'
+                    }
+                ]
             },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute
                 name: 'getAttribute',
                 description: 'Returns the value of a specified attribute on the element. If the given attribute does not exist, the value returned will either be null or an empty string',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute'
+                    }
+                ]
             },
             // {
             //     // https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes
@@ -1735,85 +2126,108 @@ const data = [
             //     description: 'Returns a live collection of all attribute nodes registered to the specified node. It is a NamedNodeMap, not an Array, so it has no Array methods and the Attr nodes\' indexes may differ among browsers. To be more specific, attributes is a key/value pair of strings that represents any information regarding that attribute.',
             //     code: ''
             // },
+            // TODO: is there any good use-case for style?
+            // {
+            //     name: 'style',
+            //     description: 'Gets and sets the inline style of an element. When getting, it returns a CSSStyleDeclaration object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element\'s inline style attribute.',
+            //     code: ``,
+            //     external_links: [
+            //         {
+            //             linkDescription: 'MDN',
+            //             href: 'https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style'
+            //         }
+            //     ]
+            // },
             {
-                // https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style
-                name: 'style',
-                description: 'Gets and sets the inline style of an element. When getting, it returns a CSSStyleDeclaration object that contains a list of all styles properties for that element with values assigned for the attributes that are defined in the element\'s inline style attribute.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/className
                 name: 'className',
                 // TODO: validate how this works with multiple classes
                 description: 'Gets and sets the value of the class attribute of the specified element. If there are multiple classes on the element then the returned value will be a string of space-separated class names.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement
-                name: 'insertAdjacentElement',
-                description: 'Inserts an element node at a given position relative to the element it is invoked upon.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
-                name: 'insertAdjacentHTML',
-                description: 'Parses the specified text as HTML and inserts the resulting nodes into the DOM tree at a specified position. It does not reparse the element it is being used on, and thus it does not corrupt the existing elements inside that element. This avoids the extra step of serialization, making it much faster than direct innerHTML manipulation.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText
-                name: 'insertAdjacentText',
-                description: 'Inserts a given text node at a given position relative to the element it is invoked upon.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore
-                name: 'insertBefore',
-                description: 'Inserts a node before a reference node as a child of a specified parent node. If the given node already exists in the document, insertBefore() moves it from its current position to the new position. (That is, it will automatically be removed from its existing parent before appending it to the specified new parent.)',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/contains
-                name: 'contains',
-                description: 'Returns a Boolean value indicating whether a node is a descendant of a given node, i.e. the node itself, one of its direct children (childNodes), one of the children\'s direct children, and so on.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName
-                name: 'nodeName',
-                description: 'Read-only property that returns the name of the current node as a string.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
-                name: 'tagName',
-                description: 'Read-only property that returns the tag name of the element on which it\'s called. For example, if the element is an <img>, its tagName property is "IMG"',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType
-                name: 'nodeType',
-                description: 'Read-only property that returns an integer that identifies what type of node something is. It distinguishes different kind of nodes from each other, such as elements, text and comments.',
-                code: ''
-            },
-            {
-                // https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue
-                name: 'nodeValue',
-                description: 'Returns or sets the value of the a node.',
-                code: ''
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/className'
+                    }
+                ]
             },
             {
                 // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
                 name: 'classList',
-                description: 'Read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list. Using classList is a convenient alternative to accessing an element\'s list of classes as a space-delimited string via element.className.',
-                code: ''
+                description: 'Read-only property that returns a DOMTokenList, which is a live collection of the class attributes of the element (e.g using classList on an element with class="one two three" will return a list similar to the following format: { 0: \'one\', 1: \'two\', 2: \'three\' }). This can then be used to manipulate the class list using built-in methods that are inherited from the DOMTokenList object. Using classList is a convenient alternative to accessing an element\'s list of classes as a space-delimited string via element.className.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/classList'
+                    },
+                    {
+                        linkDescription: 'MDN - DOMTokenList',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList'
+                    }
+                ],
             },
+            {
+                name: 'contains',
+                description: 'Returns a Boolean value indicating whether a node is a descendant of a given node, i.e. the node itself, one of its direct children (childNodes), one of the children\'s direct children, and so on.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/contains'
+                    }
+                ]
+            },
+            {
+                name: 'nodeName',
+                description: 'Read-only property that returns the name of the current node as a string.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName'
+                    }
+                ]
+            },
+            {
+                name: 'tagName',
+                description: 'Read-only property that returns the tag name of the element on which it\'s called. For example, if the element is an <img>, its tagName property is "IMG"',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName'
+                    }
+                ]
+            },
+            {
+                name: 'nodeType',
+                description: 'Read-only property that returns an integer that identifies what type of node something is. It distinguishes different kind of nodes from each other, such as elements, text and comments.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeType'
+                    }
+                ]
+            },
+            {
+                name: 'nodeValue',
+                description: 'Returns or sets the value of the a node.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeValue'
+                    }
+                ]
+            },
+            
         ]
     },
     ////////////
     {
         id: 'dom_events',
-        name: 'DOM Events',
+        name: 'DOM Events & Event Handling',
         type: '',
         // data: [
         //     {
@@ -1826,12 +2240,37 @@ const data = [
         //         description: '',
         //         code: ''
         //     },
+        //     {
+        //         name: 'event object',
+        //         description: '',
+        //         code: ''
+        //     },
+        //     {
+        //         name: 'default event behavior',
+        //         description: '',
+        //         code: ''
+        //     },
+        //     {
+        //         name: 'event loop',
+        //         description: '',
+        //         code: ''
+        //     },
+        //     {
+        //         name: '',
+        //         description: '',
+        //         code: ''
+        //     },
+        //     {
+        //         name: 'Common Events',
+        //         description: '',
+        //         code: ''
+        //     },
         // ]
     },
     ////////////
     {
-        id: 'control_statements',
-        name: 'JavaScript Control Statements ',
+        id: 'objects',
+        name: 'JavaScript Objects',
         type: '',
         // data: [
         // ]
@@ -1839,15 +2278,144 @@ const data = [
     ////////////
     {
         id: 'scope',
-        name: 'JavaScript Scope & Closures',
+        name: 'JavaScript Scope, Closures and "this"',
         type: '',
         // data: [
         // ]
     },
     ////////////
+    {
+        id: 'modules',
+        name: 'Modules, Importing & Exporting',
+        type: '',
+    //     data: [
+    //  ]
+    },
+    ////////////
+    {
+        id: 'npm',
+        name: 'NPM Packages',
+        type: '',
+    //     data: [
+    //  ]
+    },
+    ////////////
+    // {
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators
+    //     id: 'logical_operators',
+    //     name: 'JavaScript Logical Operators & Truthy/Falsy',
+    //     type: '',
+    //     data: [
+    //         {
+    //             name: 'Logical OR ',
+    //             description: '',
+    //             syntax: ``,
+    //             code: ``
+    //         },
+    //         {
+    //             name: 'Logical AND',
+    //             description: '',
+    //             syntax: ``,
+    //             code: ``
+    //         },
+    //         {
+    //             name: 'Logical NOT',
+    //             description: '',
+    //             syntax: ``,
+    //             code: ``
+    //         },
+    //         {
+    //             name: 'Expression Evaluation & Short-Circuiting',
+    //             description: '',
+    //             syntax: ``,
+    //             code: ``
+    //         },
+    //         {
+    //             name: 'Operator Precedence',
+    //             description: '',
+    //             syntax: ``,
+    //             code: ``
+    //         },
+    //     ]
+    // },
+    ////////////
+    // {
+    //     id: 'resources',
+    //     name: 'Great Resources',
+    //     type: '',
+    //     data: [
+
+        // JS ----
+        // Eloquent Javascript: https://eloquentjavascript.net/
+        // You Don\'t Know JS: https://github.com/RoundEm/You-Dont-Know-JS
+        // Professor Frisby's Mostly Adequate Guide to Functional Programming: https://drboolean.gitbooks.io/mostly-adequate-guide-old/content/
+        // Functional-Light JavaScript: https://github.com/getify/Functional-Light-JS
+        // Understanding ES6: https://leanpub.com/understandinges6/read
+        // JavaScript Allongé: https://leanpub.com/javascriptallongesix/read#leanpub-auto-about-javascript-allong
+        // Exploring JS: https://exploringjs.com/
+        // JavaScript.info: https://javascript.info/
+        // DOM Enlightenment: http://domenlightenment.com/#1.1
+        // Node School: https://nodeschool.io/#workshoppers
+        // JS Books: The best free JavaScript resources
+
+        // Multi-subject ----
+        // MDN: https://developer.mozilla.org/en-US/docs/Learn
+        // Free Code Camp: https://www.freecodecamp.org/
+        // Codecademy: https://www.codecademy.com/
+        // Coursera: https://www.coursera.org/
+        // Khan Academy: https://www.khanacademy.org/computing/computer-programming
+        // Rithm School: https://www.rithmschool.com/courses
+        // The Odin Project: https://www.theodinproject.com/
+        // Bento: https://bento.io/
+        // Scrimba: https://scrimba.com/
+        // EDX: https://www.edx.org/course/subject/computer-science
+        // MIT OpenCourseware: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/
+
+        // CSS ----
+        // Flexbox Froggy: http://flexboxfroggy.com/
+        // Flexbox Zombies: https://mastery.games/p/flexbox-zombies
+        // CSS Grid Garden: https://cssgridgarden.com/
+        // CSS Tricks: https://css-tricks.com/
+
+        // Blogs/Channels ----
+        // https://alligator.io/
+        // https://wesbos.com/blog/
+        // https://www.leveluptutorials.com/
+        // https://flaviocopes.com/
+        // https://tylermcginnis.com/
+        // https://alistapart.com/
+        // https://css-tricks.com/
+        // https://www.smashingmagazine.com/articles/page/2/
+        // Fun Fun Function: https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q
+        // Programming with Mosh: https://www.youtube.com/user/programmingwithmosh
+        // The Net Ninja: https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg
+        // Academind: https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w/
+        // Traversy Media: https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
+        // Layout Land: https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag
+    //  ]
+    // }
+    ////////////
+    // {
+    //     id: 'gotchas',
+    //     name: 'JavaScript Gotchas',
+    //     type: '',
+    //     data: [
+            // hoisting
+            // coercion, weak typing
+            // null === Object
+            // class is prototypal delegation
+            // == vs ===
+            // gloabal variables
+            // scope
+            // object reference
+
+            // https://github.com/denysdovhan/wtfjs
+    //     ]
+    // },
+    ////////////
     // {
     //     id: 'data_types',
-    //     name: 'JavaScript Data Types',
+    //     name: 'JavaScript Data Types & Variables',
     //     type: '',
         // data: [
         //     {
@@ -1914,42 +2482,7 @@ const data = [
         //     }
         // ]
     // },
-    ////////////
-    // {
-    //     id: 'operators',
-    //     name: 'Operators',
-    //     type: '',
-    //     data: [
-    //         {
-    //         },
-    //     ]
-    // },
-    ////////////
-    // {
-    //     id: 'variables',
-    //     name: 'Variables',
-    //     type: '',
-    //     data: [
-    //         {
-    //             name: 'let',
-    //             description: '',
-    //             examples: [
-    //             ]
-    //         },
-    //         {
-    //             name: 'const',
-    //             description: '',
-    //             examples: [
-    //             ]
-    //         },
-    //         {
-    //             name: 'var',
-    //             description: '',
-    //             examples: [
-    //             ]
-    //         }
-    //     ]
-    // }
+    
 ]
 
 export default data

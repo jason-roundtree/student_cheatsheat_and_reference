@@ -22,16 +22,16 @@ nav a {
   font-family: 'Barlow', sans-serif;
   font-weight: 600;
   margin: 2px 0;
-  /* line-height: 1.5em; */
   padding: 5px 10px;
 }
 
 nav a:hover {
-  border-left: 4px solid rgb(144, 210, 245);
+  border-left: 6px solid rgb(144, 210, 245);
+  background-color: rgb(252, 93, 93);
   color: white;
 }
 
-nav li {
+nav li, .description_container li {
   margin: 3px 0;
 }
 
@@ -81,8 +81,13 @@ a, a:visited {
   color: black;
 }
 
-li a:hover {
-  background-color: rgb(252, 93, 93);
+.description_container a:hover {
+  background-color: none;
+  color: rgb(252, 93, 93);
+}
+
+li {
+  list-style: none;
 }
 
 h2 {
@@ -96,12 +101,8 @@ h2 a:hover, header a:hover {
 h3 {
   font-family: 'Barlow', sans-serif;
   font-size: 1.5em;
-  padding: 20px 0 5px;
-  border-bottom: 2px dashed rgb(252, 93, 93);
-}
-
-li {
-  list-style: none;
+  padding: 40px 0 5px;
+  border-bottom: 1px dashed rgb(252, 93, 93);
 }
 
 .table_container {
@@ -166,6 +167,13 @@ kbd {
   padding: 5px;
   border-radius: 3px;
   white-space: nowrap;
+}
+
+.section_description {
+  padding: 5px;
+  border: 1px dashed rgb(252, 93, 93);
+  border-top: 0;
+  background-color: white;
 }
 
 .incomplete_section::after {
