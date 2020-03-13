@@ -589,7 +589,7 @@ const data = [
         id: 'cli',
         name: 'Command Line Interface',
         type: 'descriptiveWithCode',
-        sectionDescription: 'This is a list of some of the more commonly used commands but I haven\'t included examples or any of the available options/arguments/flags that you can add to tweak the settings that control the details of how the commands work.',
+        sectionDescription: 'This is a list of some of the more commonly used commands but I haven\'t included examples or any of the available options/arguments/flags that you can add to control the settings and details of how the commands work.',
         data: [
             {
                 name: 'cd',
@@ -674,7 +674,7 @@ const data = [
         id: 'git_commands',
         name: 'Git Commands',
         type: 'descriptiveWithCode',
-        sectionDescription: 'This is a list of some of the more commonly used commands and definitions but I haven\'t included examples or any of the available options/arguments/flags that you can add to tweak the settings that control the details of how the commands work.',
+        sectionDescription: 'This is a list of some of the more commonly used commands and definitions but I haven\'t included examples or any of the available options/arguments/flags that you can add to control the settings and details of how the commands work.',
         external_links: [
             {
                 linkDescription: 'Git Documentation',
@@ -1316,6 +1316,16 @@ const data = [
         id: 'functions',
         name: 'JavaScript Functions ',
         type: 'descriptiveWithCode',
+        // sectionDescription: '
+            // - functions must be invoked/called
+            // - functions have parameters and arguments
+            // - functions have different ways of being written
+            // - functions that don't explicitly return a value return undefined
+            // - functions should typically do one thing
+            // - functions have scope (lexical scope??)
+            // - functions are first-class
+            // - functions are objects
+        // ',
         external_links: [
             {
                 linkDescription: '6 Ways to Declare JavaScript Functions by Dmitri Pavlutin',
@@ -1345,7 +1355,7 @@ const data = [
             },
             {
                 name: 'function expression',
-                description: 'Since functions are first-class and can be treated like other types of values you can assign a function to a variable that can then be used to call the function.',
+                description: 'Since functions are "first-class" and can be treated like other types of values you can assign a function to a variable that can then be used to call the function.',
                 code: `
     const doSomething = function() {
         return 'Something!';
@@ -1512,7 +1522,7 @@ const data = [
             },
             {
                 name: 'for-of',
-                description: 'Creates a loop iterating over iterable objects such as String, Array, array-like objects (e.g. HTMLCollection, NodeList), Map, Set, and user-defined iterables. Does not loop over normal JavaScript objects (see For-in loop, Object.keys, Object.values, Object.entries).',
+                description: 'Creates a loop iterating over iterable objects such as String, Array, array-like objects (e.g. HTMLCollection, NodeList), Map, Set, and user-defined iterables. Does not loop over normal JavaScript objects (see for-in loop, Object.keys, Object.values, Object.entries).',
                 syntax: 'for ([variable] of [iterable]) {}',
                 code: `
     const technologies = ['JS', 'HTML', 'CSS'];
@@ -1594,7 +1604,7 @@ const data = [
     const array = ['a', 'b', 'c'];
     array.forEach(item => {
         console.log(item); // logs 'a', 'b', 'c'
-        sendDataToDatabase(item);
+        doSomethingWithItem(item);
     });            
                 `
             },
@@ -1773,7 +1783,7 @@ const data = [
             },
             {
                 name: 'getElementsByTagName',
-                description: 'Returns a live HTMLCollection of elements with the given tag name. All descendants of the specified element are searched, but not the element itself. The returned list is live, which means it updates itself with the DOM tree automatically. Therefore, there is no need to call Element.getElementsByTagName() with the same element and arguments repeatedly if the DOM changes in between calls.',
+                description: 'Returns a live HTMLCollection of elements with the given tag name. All descendants of the specified element are searched, but not the element itself. The returned list is live, which means it updates itself with the DOM tree automatically.',
                 code: ``,
                 external_links: [
                     {
@@ -2153,8 +2163,19 @@ const data = [
             {
                 // https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
                 name: 'classList',
-                description: 'Read-only property that returns a DOMTokenList, which is a live collection of the class attributes of the element (e.g using classList on an element with class="one two three" will return a list similar to the following format: { 0: \'one\', 1: \'two\', 2: \'three\' }). This can then be used to manipulate the class list using built-in methods that are inherited from the DOMTokenList object. Using classList is a convenient alternative to accessing an element\'s list of classes as a space-delimited string via element.className.',
-                code: ``,
+                description: 'Read-only property that returns a DOMTokenList, which is a live collection of the class attributes of the element (e.g using classList on an element with class="one two three" will return a list similar to the following format: { 0: \'one\', 1: \'two\', 2: \'three\' }). This can then be used to manipulate the class list using built-in methods that are inherited from the DOMTokenList object (see link below for the available methods). Using classList is a convenient alternative to accessing an element\'s list of classes as a space-delimited string via element.className.',
+    //             code: `
+    // DOMTokenList.item(index)
+    // DOMTokenList.contains(token)
+    // DOMTokenList.add(token1[, token2[, ...tokenN]])
+    // DOMTokenList.remove(token1[, token2[, ...tokenN]])
+    // DOMTokenList.replace(oldToken, newToken)
+    // DOMTokenList.toggle(token [, force])
+    // DOMTokenList.entries()
+    // DOMTokenList.forEach(callback [, thisArg])
+    // DOMTokenList.keys()
+    // DOMTokenList.values()
+    //             `,
                 external_links: [
                     {
                         linkDescription: 'MDN',
@@ -2226,54 +2247,376 @@ const data = [
     },
     ////////////
     {
-        id: 'dom_events',
-        name: 'DOM Events & Event Handling',
-        type: '',
-        // data: [
-        //     {
-        //         name: 'addEventListener',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: 'removeEventListener',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: 'event object',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: 'default event behavior',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: 'event loop',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: '',
-        //         description: '',
-        //         code: ''
-        //     },
-        //     {
-        //         name: 'Common Events',
-        //         description: '',
-        //         code: ''
-        //     },
-        // ]
+        id: 'browser_events',
+        name: 'Browser/DOM Events & Event Handling',
+        type: 'descriptiveWithCode',
+        sectionDescription: 'Browser/DOM events are actions that typically occur as a result of a user interacting with a website. There are many different types of events that can occur, such as a web page loading or a user clicking on element, typing into an input and submitting a form (see MDN link below for more events). By adding event listeners to the DOM and utilizing the event-based APIs built into web browsers, developers can respond to events in a programmatic way.',
+        external_links: [
+            {
+                linkDescription: 'MDN - Events',
+                href: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events'
+            },
+            {
+                linkDescription: 'MDN - Event Interface',
+                href: 'https://developer.mozilla.org/en-US/docs/Web/API/Event'
+            }
+        ],
+        data: [
+            {
+                name: 'Event Listeners/Handlers',
+                description: 'Code, typically in the form of functions, attached to the DOM that listen for specific events to occur and then react to them in some way. The terms event listeners and event handlers are often used interchangeably to refer to the same thing, although listener could specifically be referring to the part of the code that listens for an event to occur, while handler could refer to the function that is called as a result of the listener being triggered. By those specific definitions you could have multiple listeners that call the same handler function.',
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            // TODO: mention other ways to add listeners/handlers
+            {
+                name: 'addEventListener',
+                description: 'Code that attaches to a specific part of the DOM, specifies what type of event to listen for and reacts to that event. The last parameter, listed below in the Syntax section as "useCapture" is a boolean value that controls if the given event can be triggered during the Event Capturing phase and it\'s default value is false (this last parameter can also be an object that implements other options that are infrequently used and beyond the scope of this rudimentary description).',
+                syntax: 'domTarget.addEventListener("eventType", callbackFunction, useCapture)',
+                code: `
+    const myForm = document.querySelector('form');
+    myForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        submitDataToServer()
+    })
+
+    // Or the function can be declared outside of the listener
+    function handleFormSubmission(event) {
+        event.preventDefault();
+        submitDataToServer()
+    }
+    myForm.addEventListener('submit', handleFormSubmission)
+
+    // You may also add event listeners in the following methods, 
+    // but addEventListener is the more modern and flexible approach:
+
+    // This is known as a traditional DOM event handler
+    myButton.onclick = function () { ... }
+
+    // If you call a named function you don't include parentheses:
+    myButton.onclick = doSomething
+
+    // You can add inline event handlers directly 
+    // to html elements as attributes, assuming the
+    // handler function being called is in your JavaScript 
+    // <button onclick=doSomething()>Click Me!</button>
+                `,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener'
+                    }
+                ]
+            },
+            {
+                name: 'removeEventListener',
+                description: 'Remove a previously declared event listener that you no longer need or want to react to. The parameters passed to the method must match the parameters used when the event listener was added.',
+                code: ``,
+                syntax: 'domTarget.addEventListener("eventType", callbackFunction, useCapture)',
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener'
+                    }
+                ]
+            },
+            {
+                name: 'Event object',
+                description: 'When an event is triggered, the function that handles the event receives an Event object from the browser that contains different properties describing the event, which developers can then use to identify and appropriately respond to the event. The most commonly utilized properties of the Event object describe where in the DOM the event occurred.',
+                code: `
+    // You can name the event object anything you want but it's most common to use "event" or just "e":
+    imAnEventHandler(event) { console.log(event) }
+    imAlsoAnEventHandler(e) { console.log(e) }
+                `,
+                // TODO: add image of dev tools?
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            {
+                name: 'Event Propagation: Event Bubbling & Event Capturing',
+                description: 'Event Propagation is a general term for the different manners in which an event travels through the DOM once the event has occured. Events can propagate inward, from the top of the DOM tree\'s Window object down to the event target element that registered the event, and outward from the event target back to the Window object. The inward propagation is known as Event Capturing or the Capturing Phase and outward propagation is known as Event Bubbling or the Bubbling Phase. The Capturing Phase occurs first and the Bubbling Phase occurs last, and in between these phases is a third phase referred to as the Target Phase, which is when the propagation reaches the event target where the event occured. Not all event types propagate in both directions.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'Tutorial Republic',
+                        href: 'https://www.tutorialrepublic.com/javascript-tutorial/javascript-event-propagation.php'
+                    },
+                ]
+            },
+            {
+                name: 'Event.target',
+                description: 'The "target" property of the Event object is itself an object containing many helpful pieces of information about the element where an event was triggered, including information like the element\'s attributes, content, location and it\'s relation to other elements in the DOM.',
+                code: ``,
+                // TODO: add image of dev tools?
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Event/target'
+                    }
+                ]
+            },
+            {
+                name: 'Event.currentTarget',
+                description: 'The "currentTarget" property of the Event object is similar to the "target" property (see section above), but instead of being the element that triggered the event it\'s an ancestor element that an event listener is attached to. Since events propagate throughout the DOM, event listeners don\'t need to be on the actual element that triggered the event. This is particularly helpful because it allows us to do things like event delegation (see section below). NOTE: If you try to console.log currentTarget you will often see the value set to NULL in the browser console but it typically is actually set to the element where the event listener exists. If you want to console.log currentTarget you can first set it equal to a variable and then console.log the variable.',
+                code: ``,
+                // TODO: add image of dev tools?
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget'
+                    }
+                ]
+            },
+            {
+                name: 'Event Delegation',
+                description: 'Event delegation is when you add an event listener to a parent element of a child element where the event occurred. It\'s particularly helpful in that it prevents you from having to add event listeners to each child element when a long list of children elements exists and it also allows you to respond to events that occur on child elements that are dynamically added to the DOM after the page initially loads.',
+                // code: `
+                // `,
+                external_links: [
+                    {
+                        linkDescription: 'javascript.info',
+                        href: 'https://javascript.info/event-delegation'
+                    },
+                    {
+                        linkDescription: 'howchoo.com article by Daynejones',
+                        href: 'https://howchoo.com/g/ytc3zjjkn2u/javascript-event-delegation-a-primer'
+                    }
+                ]
+            },
+            {
+                name: 'Event.preventDefault',
+                description: 'Events have a default behavior in the browser that you\'ll sometimes want to override. For instance, the default behavior for a form upon being submitted is to send form data directly from the client-side form to a back-end server and refresh the page, but with more modern websites we often want to do some other processing of the data instead of submitting directly to the server. Another common instance of when preventDefault comes in handy is with anchor tag links when instead of letting the browser follow the URL value in the href attribute you can perform some other action.',
+                code: ``,
+                external_links: [
+                    {
+                        linkDescription: 'MDN',
+                        href: 'https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault'
+                    }
+                ]
+            },
+    //         {
+    //             name: 'Common Events',
+    //             description: `
+    // <<< Form events: blur, focus, change, submit >>>
+    // <<< Mouse events: mousedown, mouseup, click, dblclick, mouseover, mousemove >>> 
+    // <<< Keyboard: keydown, keyup, keypress >>> 
+    // <<< Touch: touchstart, touchend, touchmove, touchcancel >>>
+    // <<< Window: scroll, resize, load, unload >>>
+    //             `,
+    //             code: ``,
+    //             external_links: [
+    //                 {
+    //                     linkDescription: 'MDN',
+    //                     href: ''
+    //                 }
+    //             ]
+    //         },
+        ]
     },
     ////////////
     {
         id: 'objects',
         name: 'JavaScript Objects',
-        type: '',
-        // data: [
-        // ]
+        type: 'descriptiveWithCode',
+        data: [
+            {
+                name: 'Object created with object literal',
+                description: 'The easiest way to define an object. A blank object consists of two curly brackets and you can either add properties (aka keys) and values to the object at the time of creation or after creation, although it\'s easier to assign them at the time of creation when possible.',
+                code: `
+    const me = {};
+    
+    // Add properties and values after object creation
+    me.name = 'Jason';
+    me.heightInches = 75;
+    me.sayHello = function() { 
+        console.log(\`Hi, my name is \${this.name}\`);
+    }
+
+    // NOTE: If you add a property to an object without assigning a value the value will initially be "undefined"
+
+    // Add properties and values at time of object creation
+    const me = {
+        name: 'Jason',
+        heightInches: 75, 
+        sayHello: function() {
+            console.log(\`Hi, my name is \${this.name}\`);
+        }
+    }
+
+    // NOTE: functional properties such as "sayHello" are typically referred to as "methods"
+
+    // You can nest objects
+    me.attributeValues = {
+        strength: 7,
+        empathy: 10,
+        persuasion: -5,
+        humor: 'Incalculable' 
+    }
+                `,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            
+            {
+                name: 'Object created with ES6 class',
+                description: '',
+                code: `
+    class Person {
+        constructor(n, a) {
+            this.name = n;
+            this.age = a;
+        }
+    }
+    // create new Person object:
+    const joeBlow = new Person('Joe Blow', 30);
+                `
+            },
+            {
+                name: 'Object created with custom pre-ES6 constructor/class function',
+                description: '',
+                code: `
+    function Person(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+    }
+    // create new Person object:
+    const jason = new Person('Jason', 'Roundtree')
+                `,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            {
+                name: 'Dot Notation vs. Bracket Notation',
+                description: 'After object creation you can add properties and property values or retrieve property values using either dot notation or bracket notation. Dot notation is the more common route since it\'s less code, but bracket notation can be particularly handy and necessary if the property is being dynamically generated by your code or if the property name includes any non-allowable characters such as spaces and hyphens.',
+                code: `
+    const me = {};  
+
+    // DOT NOTATION:
+
+    // set properties and values
+    me.firstName = 'Jason';
+    me.heightInches = 75;
+    me.sayHello = function() { 
+        console.log(\`Hi, my name is \${this.name}\`);
+    }
+
+    // get value
+    console.log(me.name); // 'Jason'
+
+    // BRACKET NOTATION:
+
+    // set property and value dynamically
+    let propFromInput = 'lastName';
+    me[propFromInput] = 'Roundtree';
+    // NOTE: Don't use quotes around variables with bracket notation
+
+    // get value
+    console.log(me['lastName']); // 'Roundtree'
+    console.log(me[propFromInput]); // 'Roundtree'
+                `,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            {
+                name: 'Delete a property from an object',
+                description: 'To delete a property from an object you can use the "delete" keyword',
+                code: `
+    const myObject = {
+        name: 'Jason',
+        sayHello: function() {
+            console.log(\`Hi, my name is \${this.name}\`);
+        }
+    }
+
+    delete myObject.sayHello;
+    console.log(myObject) // { name: 'Jason' }
+                `,
+            },
+            {
+                name: 'Object created with Object.create method',
+                description: 'Coming soon...',
+                code: ``,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            // TODO: Put this in?
+    //         {
+    //             name: 'create object with built-in object constructors',
+    //             description: 'Usually there\'s no need to use this form as it\'s verbose and unnecessary, particularly with generic objects. Using the constructed form is more common with the Date() constructor or when you need some additional options at object creation.',
+    //             code: `
+    // // generally don't do this
+    // const myObject = new Object();
+
+    // // this is much more common
+    // const date = new Date();
+    //             `,
+    //             // external_links: [
+    //             //     {
+    //             //         linkDescription: 'MDN',
+    //             //         href: ''
+    //             //     }
+    //             // ]
+    //         },
+            {
+                name: 'Object prototype chain',
+                description: 'Coming soon...',
+                code: ``,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            {
+                name: 'Helpful built-in oject methods',
+                // Object.keys(o)
+                // Object.getOwnPropertyNames(o)
+                description: 'Coming soon...',
+                code: ``,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+            {
+                name: 'Objects are referenced',
+                description: 'Coming soon...',
+                code: ``,
+                // external_links: [
+                //     {
+                //         linkDescription: 'MDN',
+                //         href: ''
+                //     }
+                // ]
+            },
+        ]
     },
     ////////////
     {
@@ -2392,6 +2735,7 @@ const data = [
         // Academind: https://www.youtube.com/channel/UCSJbGtTlrDami-tDGPUV9-w/
         // Traversy Media: https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
         // Layout Land: https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag
+        // The Coding Train: https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw
     //  ]
     // }
     ////////////

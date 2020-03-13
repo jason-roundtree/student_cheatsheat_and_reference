@@ -5,6 +5,7 @@ export default function DescriptiveItem(props) {
     useEffect(() => {
         Prism.highlightAll()
     })
+    
     return (
         <div>
             {props.section.data && (

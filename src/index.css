@@ -25,10 +25,11 @@ nav a {
   padding: 5px 10px;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
   border-left: 6px solid rgb(144, 210, 245);
   background-color: rgb(252, 93, 93);
   color: white;
+  outline: none;
 }
 
 nav li, .description_container li {

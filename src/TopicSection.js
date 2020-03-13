@@ -11,8 +11,11 @@ export default function TopicSection(props) {
             </h3>
 
             {props.section.sectionDescription && (
-                <p class="section_description">{props.section.sectionDescription}</p>    
+                <p className="section_description">
+                    {props.section.sectionDescription}
+                </p>    
             )}
+
             {props.section.type === 'shortcut_table' 
                 ? (
                     <ShortcutTable 
