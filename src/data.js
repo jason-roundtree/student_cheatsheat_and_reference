@@ -877,7 +877,7 @@ const data = [
             },
             {
                 name: 'git checkout',
-                description: 'Switch branches or restore Working Directory files. ',
+                description: 'Switch branches, view prior commits, restore Working Directory files.',
                 external_links: [
                     {
                         linkDescription: 'Documentation',
@@ -1241,7 +1241,7 @@ const data = [
             },
             {
                 name: 'slice',
-                description: 'Returns a shallow copy of a portion of an array into a new array selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified',
+                description: 'Returns a shallow copy of a portion of an array into a new array selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.',
                 external_links: [
                     {
                         linkDescription: 'MDN',
@@ -1328,8 +1328,8 @@ const data = [
         // ',
         external_links: [
             {
-                linkDescription: '6 Ways to Declare JavaScript Functions by Dmitri Pavlutin',
-                href: 'https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/#21-named-function-expression'
+                linkDescription: '6 Ways to Declare JavaScript Functions - Blog post by Dmitri Pavlutin',
+                href: 'https://dmitripavlutin.com/6-ways-to-declare-javascript-functions/'
             },
         ],
         data: [
@@ -1430,7 +1430,7 @@ const data = [
             },
             {
                 name: 'constructor function',
-                description: 'Pre-ES6 way to use a function that acts as a "blueprint" for creating objects. The convention is that the name of the function should start with an upper-case letter so that it\'s easily reconizable as a contructor. The function parameters will often be named the same thing as the object properties inside the function but they don\'t have to be, as the example below shows.',
+                description: 'Pre-ES6 way to use a function that acts as a "blueprint" for creating objects. The convention is that the name of the function should start with an upper-case letter so that it\'s easily reconizable as a constructor. The function parameters will often be named the same thing as the object properties inside the function but they don\'t have to be, as the example below shows.',
                 code: `
     function Person(n, a) {
         this.name = n;
@@ -1438,7 +1438,7 @@ const data = [
         // adding a function inside the constructor will
         // add the function to each object created
         // by this constructor, which is often 
-        // unecessary since it takes up more memory
+        // unnecessary since it takes up more memory
         this.sayHelloV1 = function() {
             return \`Hello! My name is \${this.name} and I'm \${this.age} years young!\`;
         };

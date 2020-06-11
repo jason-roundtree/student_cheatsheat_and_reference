@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import Prism from 'prismjs'
 
 export default function DescriptiveItem(props) {
-    useEffect(() => {
-        Prism.highlightAll()
-    })
+    // useEffect(() => {
+    //     Prism.highlightAll()
+    // })
     
     return (
         <div>
